@@ -1,0 +1,28 @@
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 1.2rem 2rem;
+  color: white;
+  background: #ffb187;
+  background: linear-gradient(0deg, var(--main-color) 0%, #ffb187 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #ffb187;
+  letter-spacing: 0.05em;
+  border-radius: 25px;
+  transition: 0.2s all;
+}
+
+.cssbuttons-io-button svg {
+  margin-right: 8px;
+}
+
+.cssbuttons-io-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #ce5413;
+}
+
+.cssbuttons-io-button:active {
+  box-shadow: 0 0.3em 1em -0.5em #df5c15;
+}

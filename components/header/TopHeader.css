@@ -1,0 +1,40 @@
+.top-header {
+  width: 100%;
+  background-color: rgb(14, 5, 54);
+}
+
+.top-header-navbar {
+  height: var(--top-header-height);
+  display: flex;
+  /* background-color: red; */
+  padding: 0 3rem;
+  justify-content: space-between;
+  color: white;
+}
+
+.top-header-navbar > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+.top-header-navbar > div:first-child svg {
+  color: rgb(228, 91, 28);
+  display: flex;
+}
+.working-hours,
+.email,
+.phone,
+.socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.working-hours {
+}
+
+.socials {
+}
+.working-hours {
+}

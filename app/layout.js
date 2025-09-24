@@ -1,17 +1,26 @@
+import "normalize.css";
 import "./globals.css";
-import { Rubik, Almarai } from "next/font/google";
-import TopHeader from "@/components/TopHeader";
+import { DM_Sans, Roboto_Mono, Montserrat } from "next/font/google";
+import TopHeader from "@/components/header/TopHeader";
+import Header from "@/components/header/Header";
 
-const rubik = Rubik({
-  weight: "400",
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  display: "swap",
+  weight: ["400", "500", "700"], // choose weights you need
+  variable: "--font-sans",
 });
 
-const almarai = Almarai({
-  weight: "400",
+// Optional: a mono font for code
+const robotoMono = Roboto_Mono({
   subsets: ["latin"],
-  display: "swap",
+  weight: ["400", "500", "700"],
+  variable: "--font-mono",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
 });
 
 export const metadata = {
@@ -22,9 +31,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${almarai.className} ${rubik.className}`}>
-      <body>
+    <html lang="fr">
+      <body
+        className={`${dmSans.variable} ${robotoMono.variable} ${montserrat.variable}`}
+      >
         <TopHeader />
+        <Header />
         {children}
       </body>
     </html>
