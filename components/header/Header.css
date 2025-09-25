@@ -2,6 +2,8 @@
   position: fixed;
 
   top: var(--top-header-height);
+  top: 0;
+
   /* background: var(--main-color); */
   /* color: white; */
   background: white;
@@ -10,6 +12,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 5px;
   max-height: var(--header-height);
   width: 100%;
+  z-index: var(--z-fixed);
 }
 
 .header .logo {

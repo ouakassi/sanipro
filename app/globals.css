@@ -8,6 +8,7 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-montserrat: var(--font-montserrat);
+  --font-plus-jakarta: var(--font-plus-jakarta);
 
   --fs-6xl: 12rem;
   --fs-5xl: 8rem;
@@ -50,12 +51,12 @@ body {
 
 body {
   font-family: var(--font-sans);
-  font-size: var(--fs-m);
   color: var(--text-color);
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
+  font-weight: 400;
 }
 
 a {
@@ -69,6 +70,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-sans);
   color: var(--text-color);
   font-weight: var(--font-bold);
 }
@@ -114,6 +116,7 @@ svg {
   /* width: 90%; */
   max-width: 1400px;
   margin: 0 auto;
+  padding-inline: 2rem;
 }
 
 .btn-reset {

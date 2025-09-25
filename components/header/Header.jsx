@@ -6,17 +6,20 @@ import Image from "next/image";
 import { FaPhoneAlt } from "react-icons/fa";
 import Button from "../buttons/Button";
 
+const navLinks = [
+  { title: "accueil", link: "accueil" },
+  { title: "services", link: "services" },
+];
+
 export default function Header() {
   return (
     <header className=" header">
       <nav className="container">
         <Logo />
         <NavList>
-          <NavItem text={"Accueil"} />
-          <NavItem text={"Services"} />
-          <NavItem text={"Projets"} />
-          <NavItem text={"À propos"} />
-          <NavItem text={"Contact"} />
+          {navLinks.map(({ title, link }) => (
+            <NavItem title={title} link={link} />
+          ))}
         </NavList>
         <Button icon={<FaPhoneAlt />} text={"+33 611 231 314"} />
       </nav>
@@ -26,7 +29,7 @@ export default function Header() {
 
 const Logo = () => (
   <div className="logo">
-    <Image src="/logo/sanipro-logo.png" width={50} height={70} alt="logo" />
+    <Image src="/logo/sanipro-logo.png" width={100} height={100} alt="logo" />
     <span>sani</span>
     <span>pro</span>
   </div>
@@ -34,8 +37,8 @@ const Logo = () => (
 
 const NavList = ({ children }) => <ul>{children}</ul>;
 
-const NavItem = ({ text }) => (
+const NavItem = ({ title, link }) => (
   <li>
-    <Link href={"#"}>{text}</Link>
+    <Link href={"#" + link}>{title}</Link>
   </li>
 );
