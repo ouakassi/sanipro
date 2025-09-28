@@ -2,17 +2,16 @@
   position: fixed;
 
   top: var(--top-header-height);
-  top: 0;
+  /* top: 0; */
 
   /* background: var(--main-color); */
   /* color: white; */
-  background: white;
   /* color: ; */
   border-radius: 0 0 20px 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 5px;
   max-height: var(--header-height);
   width: 100%;
   z-index: var(--z-fixed);
+  background: transparent;
 }
 
 .header .logo {
@@ -38,11 +37,16 @@
   color: var(--main-color);
 }
 
-nav {
+.header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 5px;
+  background: white;
+  border-radius: 20px;
+  background: #ffffffde;
+  backdrop-filter: blur(10px);
 }
 
 nav ul {
