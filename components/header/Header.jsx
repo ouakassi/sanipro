@@ -45,7 +45,10 @@ export default function Header() {
       }
     >
       <nav className="container">
-        <Logo />
+        <Link href={"/"} className="logo-link">
+          <Logo />
+        </Link>
+
         <NavList>
           {navLinks.map(({ title, link }) => (
             <NavItem key={title} title={title} link={link} />
@@ -59,9 +62,29 @@ export default function Header() {
 
 const Logo = () => (
   <div className="logo">
-    <Image src="/logo/sanipro-logo.png" width={100} height={100} alt="logo" />
-    <span>sani</span>
-    <span>pro</span>
+    <motion.img
+      initial={{ scale: 0.8, rotate: -10, x: 30, opacity: 0 }}
+      animate={{ scale: 1, rotate: 0, x: 0, opacity: 1 }}
+      transition={{ duration: 0.2 }}
+      src="/logo/sanipro-logo.png"
+      width={100}
+      height={100}
+      alt="logo"
+    />
+    <motion.span
+      initial={{ x: -30, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.3, delay: 0.2 }}
+    >
+      sani
+    </motion.span>
+    <motion.span
+      initial={{ x: -30, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.3, delay: 0.4 }}
+    >
+      pro
+    </motion.span>
   </div>
 );
 
