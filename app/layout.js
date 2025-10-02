@@ -5,6 +5,8 @@ import {
   Roboto_Mono,
   Montserrat,
   Plus_Jakarta_Sans,
+  Bricolage_Grotesque,
+  Figtree,
 } from "next/font/google";
 import TopHeader from "@/components/header/TopHeader";
 import Header from "@/components/header/Header";
@@ -33,6 +35,17 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-plus-jakarta",
 });
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-bricolage",
+});
+
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  variable: "--font-figtree",
+});
 
 export const metadata = {
   title: "Plomberie & Rénovation 24h/24",
@@ -44,7 +57,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body
-        className={`${dmSans.variable} ${robotoMono.variable} ${montserrat.variable} ${plusJakarta.variable}`}
+        className={`${dmSans.variable} ${robotoMono.variable} ${montserrat.variable} ${plusJakarta.variable} ${bricolage.variable} ${figtree.variable}`}
       >
         <TopHeader />
         <Header />

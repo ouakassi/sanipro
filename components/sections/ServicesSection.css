@@ -284,28 +284,26 @@ article .icon img {
   text-align: center;
   color: rgb(204, 204, 204);
   color: rgb(180, 180, 180);
-  line-height: 1.4;
 }
 
 .servicess .service {
+  display: flex;
+  place-content: flex-start center;
+  align-items: flex-start;
+  gap: 4rem;
+  width: 40rem;
+  height: min-content;
+  position: relative;
   backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.1);
-  width: 100%;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0.602187px 1.56569px -1px,
     rgba(0, 0, 0, 0.14) 0px 2.28853px 5.95019px -2px,
     rgba(0, 0, 0, 0.1) 0px 10px 26px -3px;
   cursor: pointer;
   flex-flow: column;
-  place-content: flex-start center;
-  align-items: flex-start;
-  gap: 4rem;
-  width: 330px;
-  height: min-content;
-  padding: 30px;
+  padding: 3rem;
   text-decoration: none;
-  display: flex;
-  position: relative;
   overflow: hidden;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -315,6 +313,14 @@ article .icon img {
 .servicess .service:hover {
   background: #063170;
   border: 1px solid #ff7125a3;
+}
+
+.servicess .service:last-child {
+  align-items: center;
+  /* gap: 5rem; */
+  & .service-content {
+    gap: 4rem;
+  }
 }
 .servicess .icon-container + div {
   display: flex;
@@ -327,12 +333,12 @@ article .icon img {
 }
 .servicess .service h2 {
   color: white;
+  width: max-content;
 }
 
 .servicess .service p {
   color: rgb(204, 204, 204);
   font-family: var(--font-figtree);
-  line-height: 1.6;
 }
 
 .servicess .service img {

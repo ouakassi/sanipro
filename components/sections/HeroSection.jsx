@@ -22,39 +22,6 @@ const services = [
   "Rénovation",
 ];
 
-const stats = [
-  { value: 500, label: "Projets réalisés", from: 100 },
-  { value: 400, label: "Clients satisfaits" },
-  { value: 20, label: "Années d’expérience" },
-  { value: "24h/7j", label: "Disponibilité" },
-];
-
-const screws = ["one", "two", "three", "four"];
-
-const containerVariants = {
-  hidden: { opacity: 0, scale: 1.1 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-      when: "beforeChildren",
-      staggerChildren: 0.4, // 👈 cards animate one by one
-    },
-  },
-};
-
-// Card animation
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
-  },
-};
-
 const list = [
   "Intervention d’urgence 7j/7.",
   "Expertise certifiée.",
@@ -84,7 +51,7 @@ const itemVariants = {
 
 export default function HeroSection() {
   return (
-    <section className="hero-container">
+    <section id="accueil" className="hero-container">
       <div className="container hero">
         <div className="content">
           <h2>
@@ -147,101 +114,13 @@ export default function HeroSection() {
             <span></span>
             <Image
               alt="worker"
-              src={"/hero/hero.webp"}
+              src={"/hero/hero.png"}
               width="1200"
               height="900"
             />
           </div>
         </div>
-
-        <motion.div
-          className="data"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {/* Stats */}
-          {stats.map((stat, i) => (
-            <motion.div key={i} className="card" variants={cardVariants}>
-              <span>
-                {typeof stat.value === "number" ? (
-                  <>
-                    +
-                    <CountUp
-                      from={stat.from || stat.value - 80}
-                      to={stat.value}
-                      delay={0.4}
-                      separator=","
-                      duration={1.5}
-                      className="count-up-text"
-                    />
-                  </>
-                ) : (
-                  stat.value
-                )}
-              </span>
-              <span>{stat.label}</span>
-            </motion.div>
-          ))}
-
-          {/* Screws */}
-          {screws.map((pos, i) => (
-            <motion.img
-              key={i}
-              src="/hero/screw.svg"
-              alt=""
-              className={`screw-icon screw-${pos}`}
-              initial={{
-                rotate: 0,
-                scale: 1.2,
-                filter: "drop-shadow(black 1px 1px 4px)",
-              }}
-              whileInView={{
-                rotate: 360,
-                scale: 1,
-                color: "white",
-                filter: "unset",
-              }}
-              transition={{
-                duration: 0.8,
-                delay: 0.8 + i * 0.4, // stagger screws
-                ease: "easeInOut",
-              }}
-              viewport={{ once: true }}
-            />
-          ))}
-        </motion.div>
       </div>
     </section>
   );
 }
-
-<div>
-  <div>
-    <span>icon</span>
-    <h2>Équipe hautement qualifiée</h2>
-    <p>
-      Des plombiers certifiés, expérimentés et en formation continue pour
-      garantir un service irréprochable.
-    </p>
-  </div>
-  <div>
-    <span>icon</span>
-    <h2>Rapide et fiable</h2>
-    <p>
-      Intervention efficace et soignée, 24h/24 et 7j/7, avec des délais
-      respectés.
-    </p>
-  </div>
-  <div>
-    <span>icon</span>
-    <h2>Travail de qualité</h2>
-    <p>
-      Des prestations solides et durables pour vos réparations comme pour vos
-      rénovations complètes.
-    </p>
-  </div>
-</div>;
-
-<h1>Des experts depuis 2001 || Building our reputation since 2001.</h1>;

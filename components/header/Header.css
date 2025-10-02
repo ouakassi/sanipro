@@ -18,15 +18,16 @@
   width: fit-content;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  /* gap: 1rem; */
   font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: var(--font-mono);
-  padding: 1rem;
+  font-family: var(--font-montserrat);
+  padding: 0.2rem;
 }
 .header .logo img {
   width: 3rem;
+  margin-right: 1rem;
 }
 .logo span {
   color: var(--second-color);

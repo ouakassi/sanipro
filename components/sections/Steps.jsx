@@ -213,6 +213,9 @@ export default function Steps() {
             ))}
           </div>
         </main>
+        <div>
+          <h1>What are you aiting for ? call us</h1>
+        </div>
       </div>
     </motion.section>
   );
@@ -269,7 +272,9 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
 
           <h2>{data.title}</h2>
           {/* <AnimatedText text={data.short} className="short" /> */}
-
+          <p>
+            <AnimatedText text={data.description} speed={0.01} blur={false} />
+          </p>
           <motion.ul
             initial={{ opacity: 0, y: 20 }}
             animate={
@@ -293,12 +298,7 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
         </div>
 
         <motion.div
-          initial={{
-            scale: 1.1,
-            opacity: 0.8,
-            clipPath: "circle(0% at 50% 50%)",
-            x: "0%",
-          }}
+          initial={false}
           animate={
             isCardInView
               ? {
@@ -311,15 +311,14 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
                   scale: 1.1,
                   opacity: 0.8,
                   clipPath: "circle(0% at 50% 50%)",
-                  x: "0%",
+                  x: "30%",
                 }
           }
-          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, delay: cardDelay }}
           className="img-container"
           style={{ borderColor: background }}
         >
-          <motion.img src={data.image} alt="" />
+          <motion.img src={data.image} alt={data.title} />
           <span className="mask"></span>
         </motion.div>
       </div>

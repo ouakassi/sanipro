@@ -1,0 +1,80 @@
+.banner-section {
+  padding: 6rem 2rem;
+  position: relative;
+  background: radial-gradient(50% 50% at 50% 50%, #1d65d1 0%, #184fa1 100%),
+    url("/banner/back.avif");
+  background: radial-gradient(50% 50% at 50% 50%, #da1c1c 0%, #800101 100%),
+    url(/banner/back.avif);
+  /* background-image: url("/banner/back.avif"); */
+  background-blend-mode: color-burn;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 0;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  /* z-index: -2; */
+}
+
+.banner div {
+  flex: 1 1;
+}
+.banner .image-container {
+  width: 80rem;
+}
+
+.banner .image-container img {
+  object-fit: cover;
+  z-index: 1;
+}
+.banner .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.banner .content h1,
+.banner .content h2 {
+  font-size: 7rem;
+  font-weight: normal;
+  color: white;
+  text-shadow: 0px 7px 1px #00000045;
+  text-align: center;
+}
+.banner .content h2 {
+  font-size: 4rem;
+}
+.banner .icon {
+  position: absolute;
+  bottom: 0;
+  /* z-index: -1; */
+}
+
+.banner .icon path {
+  fill: #ff7d20;
+  stroke: #a20202;
+  fill: #144bad;
+  stroke: #ffffff7a;
+  stroke: #a20202;
+  stroke: #a20202;
+  fill: #ff4949;
+}
+.banner .one {
+  top: 0;
+  left: 0;
+}
+
+.banner .two {
+  right: 0;
+}
+.banner .three {
+  /* left: 0; */
+  right: 0;
+  top: 0;
+  transform: rotate(180deg);
+}
