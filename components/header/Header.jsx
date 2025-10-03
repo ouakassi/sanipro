@@ -7,6 +7,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import Button from "../buttons/Button";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import Logo from "../logo/Logo";
 
 const navLinks = [
   { title: "accueil", link: "accueil" },
@@ -59,34 +60,6 @@ export default function Header() {
     </motion.header>
   );
 }
-
-const Logo = () => (
-  <div className="logo">
-    <motion.img
-      initial={{ scale: 0.8, rotate: -10, x: 30, opacity: 0 }}
-      animate={{ scale: 1, rotate: 0, x: 0, opacity: 1 }}
-      transition={{ duration: 0.2 }}
-      src="/logo/sanipro-logo.png"
-      width={100}
-      height={100}
-      alt="logo"
-    />
-    <motion.span
-      initial={{ x: -30, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.3, delay: 0.2 }}
-    >
-      sani
-    </motion.span>
-    <motion.span
-      initial={{ x: -30, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.3, delay: 0.4 }}
-    >
-      pro
-    </motion.span>
-  </div>
-);
 
 const NavList = ({ children }) => <ul>{children}</ul>;
 

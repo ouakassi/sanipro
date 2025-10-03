@@ -295,17 +295,34 @@ export default function ServicesSection() {
               <motion.span
                 className="icon-container"
                 initial={{
-                  scale: 0.8,
-                  rotate: -90,
+                  y: -30,
+                  opacity: 0,
+                  scale: 0.3,
+                  rotate: -10,
                 }}
                 whileInView={{
+                  y: 0,
+                  opacity: 1,
                   scale: 1,
                   rotate: 0,
-                  transition: {
-                    duration: 0.6,
-                    delay: 0.2,
-                    ease: "easeOut",
-                  },
+                }}
+                viewport={
+                  {
+                    // once: true,
+                    // amount: 1,
+                  }
+                }
+                transition={{
+                  type: "spring",
+                  damping: 12, // More bounce for water effect
+                  stiffness: 400,
+                  mass: 1,
+                  delay: 0.2, // Slight delay for better timing
+                }}
+                // Add a subtle secondary animation
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 },
                 }}
               >
                 <img src={icon} alt="" />
