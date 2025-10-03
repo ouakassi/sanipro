@@ -10,6 +10,7 @@ import {
 } from "next/font/google";
 import TopHeader from "@/components/header/TopHeader";
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
         <TopHeader />
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
