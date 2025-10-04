@@ -68,9 +68,7 @@ export const quickLinks = [
 export const legalLinks = [
   { label: "Mentions Légales", href: "#mentions-legales" },
   { label: "Politique de Confidentialité", href: "#politique-confidentialite" },
-  { label: "Politique de Cookies", href: "#politique-cookies" },
   { label: "Conditions Générales d’Utilisation", href: "#cgu" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Footer() {
@@ -88,15 +86,6 @@ export default function Footer() {
               reach out to us, through our expert.
             </p>
             <div className="contact-info-container">
-              <ul className="info">
-                {contactInfo.map((item, i) => (
-                  <li key={i}>
-                    {item.icon}
-                    {item.text}
-                  </li>
-                ))}
-              </ul>
-
               <ul className="social-media">
                 {socialLinks.map((item, i) => (
                   <li key={i}>
@@ -109,7 +98,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="links-container">
-            <div className="links">
+            {/* <div className="links">
               <h4>Nos Services</h4>
               <ul>
                 {servicesLinks.map((link, i) => (
@@ -118,7 +107,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
             <div className="links">
               <h4>Liens Rapides</h4>
@@ -131,15 +120,17 @@ export default function Footer() {
               </ul>
             </div>
             <div className="links">
-              <h4>Liens Rapides</h4>
-              <ul>
-                {legalLinks.map((link, i) => (
+              <h4>Contact</h4>
+              <ul className="info">
+                {contactInfo.map((item, i) => (
                   <li key={i}>
-                    <Link href={link.href}>{link.label}</Link>
+                    {item.icon}
+                    {item.text}
                   </li>
                 ))}
               </ul>
             </div>
+
             {/* <div className="links">
             <h4>Contact</h4>
             <ul>
@@ -151,6 +142,13 @@ export default function Footer() {
         </div>
         <div className="bottom-footer">
           <p>© 2024 Pamar. All rights reserved.</p>
+          <ul>
+            {legalLinks.map((link, i) => (
+              <li key={i}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>

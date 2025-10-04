@@ -4,6 +4,15 @@ footer {
   padding: 4rem 2rem 1rem 2rem;
 }
 .footer {
+  /* background: url("/footer-background.png") no-repeat center center; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  background-size: cover;
+  width: 100%;
+  gap: 2rem;
+  /* height: 100%; */
 }
 .footer p {
   color: #d1d1d1;
@@ -29,6 +38,7 @@ footer {
 .top-footer .footer-logo {
   font-size: 6rem;
   gap: 1rem;
+  align-items: flex-end;
 }
 .top-footer .footer-logo img {
   width: 6rem;
@@ -42,21 +52,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.contact-info-container .info {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.contact-info-container .info li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.contact-info-container .info li svg {
-  color: #ff6600;
-  font-size: 2rem;
 }
 
 .contact-info-container .social-media {
@@ -94,11 +89,12 @@ footer {
   margin-bottom: 2rem;
   font-size: 2rem;
   color: #3b92e6;
+  /* color: #f4df35; */
 }
 .links ul {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 .top-footer .links li {
   margin: 5px 0;
@@ -113,19 +109,54 @@ footer {
   color: #ff6600;
 }
 .bottom-footer {
+  display: flex;
   /* color: #e0e0e0; */
-  text-align: center;
+  /* text-align: center; */
   padding: 1rem;
   font-size: 1.6rem;
+  position: relative;
+  padding-top: 2rem;
 }
+.bottom-footer::before {
+  content: "";
+  background: linear-gradient(to right, transparent, #ff660065, transparent);
+  /* margin-right: 1rem; */
+  /* align-self: center; */
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 0;
+}
+
 .bottom-footer a {
-  color: #ff6600;
+  color: white;
+  /* color: #ff6600; */
   text-decoration: none;
 }
 .bottom-footer a:hover {
   text-decoration: underline;
 }
 
+.bottom-footer ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+}
+.links .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.links .info li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.links .info li svg {
+  color: #ff6600;
+  font-size: 2rem;
+}
 /* @media (max-width: 600px) {
   .top-footer .content {
     padding: 0 10px;
