@@ -22,6 +22,7 @@ import { IoCall } from "react-icons/io5";
 import AnimatedText from "../animations/AnimatedText";
 import Button from "../buttons/Button";
 import { FaPhoneAlt } from "react-icons/fa";
+import MiniLogo from "../logo/MiniLogo";
 
 export const processSteps = [
   {
@@ -222,11 +223,7 @@ export default function Steps() {
         </main>
         <div className="call-data">
           <h1>
-            N’attendez plus, contactez{" "}
-            <span>
-              <b>SANI</b>
-              <b>PRO</b>
-            </span>{" "}
+            N’attendez plus, contactez <MiniLogo />
             dès aujourd’hui !
           </h1>
           <Button text="+33 611 231 314" icon={<FaPhoneAlt />} />

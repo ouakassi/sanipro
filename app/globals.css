@@ -7,6 +7,8 @@
   --paragraph-color: rgb(83, 83, 83);
   --header-color: #184978;
 
+  --text-dark: rgb(204, 204, 204);
+
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-montserrat: var(--font-montserrat);

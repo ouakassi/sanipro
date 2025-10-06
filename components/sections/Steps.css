@@ -1,6 +1,6 @@
 .steps-section {
   padding: 6rem 2rem;
-  padding-top: calc(16% + 5rem);
+  padding-top: 45rem;
 }
 
 .steps {
@@ -257,17 +257,4 @@
   font-size: 1.8rem;
   padding: 1.2rem 2rem;
   background: linear-gradient(0deg, #ff1111 0%, #ff9191 100%);
-}
-
-.call-data h1 span {
-  background: linear-gradient(45deg, #ffe1d1, #ffffff);
-  padding: 0.2rem 1rem;
-  border-radius: 10px;
-}
-.call-data h1 span b:first-child {
-  color: var(--main-color);
-}
-
-.call-data h1 span b:last-child {
-  color: var(--second-color);
 }

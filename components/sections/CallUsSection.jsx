@@ -50,11 +50,12 @@ export default function CallUsSection() {
           ))}
         </div>
         <div className="content">
-          <h1>We Respond to Your Call Quickly</h1>
+          <h1>Nous Répondons Rapidement à Votre Appel</h1>
           <p>
-            You can trust our plumbers and the quality professionalism of our
-            work. Every residential plumbing technician for the uniformed and
-            badged, and will arrive at your home.
+            Faites confiance à nos plombiers qualifiés et à la qualité
+            professionnelle de notre travail. Chaque technicien Sanipro,
+            identifié et expérimenté, intervient chez vous avec sérieux et
+            efficacité.
           </p>
           <Button text="Get a Free Estimate" href="#contact" />
         </div>

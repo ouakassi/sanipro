@@ -1,0 +1,11 @@
+.mini-logo {
+  background: linear-gradient(45deg, #ffe1d1, #ffffff00);
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+  margin: 0 0.4rem;
+  color: var(--second-color);
+}
+
+.mini-logo b:nth-child(2) {
+  color: var(--main-color);
+}

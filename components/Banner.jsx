@@ -12,7 +12,9 @@ export default function Banner() {
           <img src="/banner/sanipro-car.png" alt="sanipro car" />
         </div>
         <div className="content">
-          <h1>Panne aujourd'hui, réparé aujourd'hui !</h1>
+          <h1>
+            Panne aujourd'hui ?<br /> réparé aujourd'hui !
+          </h1>
           {/* <p>
             Lorem ipsum dolor sit amet consectetur adipiscing elit aenean id
             volutpat imperdiet quis at pellentesque nunc commodo nunc purus

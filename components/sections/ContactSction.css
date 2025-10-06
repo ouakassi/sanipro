@@ -1,0 +1,86 @@
+.contact-section {
+  padding: 6rem 2rem;
+}
+
+.contact-section header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.contact-section header h1 {
+  /* text-align: center; */
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  font-family: var(--font-secondary);
+}
+
+.contact-section header h1 span {
+  color: var(--main-color);
+  font-family: var(--font-montserrat);
+  font-style: italic;
+}
+.contact-section header p {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  max-width: 60rem;
+  /* text-align: center; */
+  margin-bottom: 2rem;
+}
+
+.contact-section .map-container {
+  width: 100rem;
+  height: 60rem;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.contact-section .cards {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-section .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  flex: 1;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border: 1px solid transparent;
+  min-width: 40rem;
+  background: linear-gradient(to bottom, #ffe9dd, #ffe8db);
+
+  box-shadow: rgb(255 255 255) 0px 30px 60px -12px inset,
+    rgb(255 255 255) 0px 18px 36px -18px inset;
+  /* background: red; */
+}
+
+.contact-section .card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #ff894a;
+  font-weight: 300;
+}
+
+.contact-section .card p {
+  color: var(--second-color);
+  font-weight: bold;
+  min-width: 100%;
+}
+
+.contact-section .card svg {
+  font-size: 4rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}

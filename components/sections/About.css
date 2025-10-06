@@ -18,18 +18,7 @@
   font-size: 5rem;
   max-width: 50%;
 }
-.about-container header h1 span {
-  background: linear-gradient(45deg, #ffe1d1, #ffffff);
-  padding: 0.2rem 1rem;
-  border-radius: 10px;
-}
-.about-container header h1 span b:first-child {
-  color: var(--main-color);
-}
 
-.about-container header h1 span b:last-child {
-  color: var(--second-color);
-}
 .about-container main {
   display: flex;
   padding: 5rem 1rem;
@@ -46,6 +35,7 @@
   grid-template-rows: 1fr; /* stack right images */
   gap: 1.5rem;
   padding: 1rem;
+  flex: 1;
 }
 
 .about-container main .images img {

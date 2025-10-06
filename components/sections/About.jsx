@@ -5,7 +5,7 @@ import CountUp from "../animations/CountUp";
 import "./About.css";
 import { motion } from "motion/react";
 import Image from "next/image";
-import Test from "./Test";
+import MiniLogo from "../logo/MiniLogo";
 
 const stats = [
   {
@@ -79,10 +79,7 @@ export default function About() {
       <div className="container about-container">
         <header>
           <h1>
-            <span>
-              <b>SANI</b>
-              <b>PRO</b>
-            </span>{" "}
+            <MiniLogo />
             votre partenaire de confiance en plomberie
           </h1>
         </header>

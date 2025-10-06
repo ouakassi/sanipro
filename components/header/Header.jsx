@@ -11,7 +11,11 @@ import Logo from "../logo/Logo";
 
 const navLinks = [
   { title: "accueil", link: "accueil" },
+  { title: "à propos", link: "a-propos" },
   { title: "services", link: "services" },
+  { title: "projets", link: "projets" },
+  { title: "avis clients", link: "avis" },
+  { title: "contact", link: "contact" },
 ];
 
 export default function Header() {
