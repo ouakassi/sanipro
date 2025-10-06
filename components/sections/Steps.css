@@ -1,8 +1,13 @@
 .steps-section {
   padding: 6rem 2rem;
+  padding-top: calc(16% + 5rem);
 }
 
 .steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .steps header {
@@ -109,8 +114,8 @@
 } */
 
 .card-backgroundd {
-  background: url("/steps/background.svg");
   background: url("/steps/background.png");
+  background: url("/steps/background.jpg");
   width: 100%;
   display: flex;
   justify-content: center;
@@ -118,13 +123,14 @@
   background-repeat: no-repeat;
   background-position: center;
   max-width: 100rem;
+  border-radius: 20px;
 }
 
 .steps .card {
   width: 100%;
   /* background: rgb(197, 197, 197); */
   padding: 2rem 4rem;
-  border-radius: 20px;
+  border-radius: inherit;
   /* gap: 1rem; */
   display: flex;
   flex-direction: row;
@@ -133,6 +139,7 @@
   /* max-width: 100rem; */
 
   background: linear-gradient(271deg, #042443 0%, #165da0de 200%);
+  background: linear-gradient(96deg, #361403 0%, #953a09d9 200%);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   /* background: linear-gradient(11deg, #120075, #6ab5ff); */
   position: relative;
@@ -230,4 +237,37 @@
   line-height: 1.6;
   flex: 1;
   margin-bottom: -2rem;
+}
+
+.call-data {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.call-data h1 {
+  font-size: 3.2rem;
+  /* color: white; */
+  text-align: center;
+  max-width: 60rem;
+}
+.call-data button {
+  font-size: 1.8rem;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(0deg, #ff1111 0%, #ff9191 100%);
+}
+
+.call-data h1 span {
+  background: linear-gradient(45deg, #ffe1d1, #ffffff);
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+}
+.call-data h1 span b:first-child {
+  color: var(--main-color);
+}
+
+.call-data h1 span b:last-child {
+  color: var(--second-color);
 }

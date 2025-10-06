@@ -19,7 +19,9 @@ import {
 
 import "./Steps.css";
 import { IoCall } from "react-icons/io5";
-import AnimatedText from "../animations/BlurText";
+import AnimatedText from "../animations/AnimatedText";
+import Button from "../buttons/Button";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export const processSteps = [
   {
@@ -194,7 +196,12 @@ export default function Steps() {
           <div className="line-container">
             <motion.div
               className="line-progress"
-              style={{ background, scaleY, transformOrigin: "top center" }}
+              style={{
+                // background,
+
+                scaleY,
+                transformOrigin: "top center",
+              }}
             />
           </div>
 
@@ -213,8 +220,16 @@ export default function Steps() {
             ))}
           </div>
         </main>
-        <div>
-          <h1>What are you aiting for ? call us</h1>
+        <div className="call-data">
+          <h1>
+            N’attendez plus, contactez{" "}
+            <span>
+              <b>SANI</b>
+              <b>PRO</b>
+            </span>{" "}
+            dès aujourd’hui !
+          </h1>
+          <Button text="+33 611 231 314" icon={<FaPhoneAlt />} />
         </div>
       </div>
     </motion.section>
@@ -257,7 +272,7 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
         <div className="content">
           <motion.span
             className="number"
-            style={{ color: background }}
+            // style={{ color: background }}
             initial={{ sclae: 0, y: -50, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
             transition={{
@@ -316,7 +331,7 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
           }
           transition={{ duration: 0.6, delay: cardDelay }}
           className="img-container"
-          style={{ borderColor: background }}
+          // style={{ borderColor: background }}
         >
           <motion.img src={data.image} alt={data.title} />
           <span className="mask"></span>
