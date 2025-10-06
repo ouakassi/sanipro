@@ -12,12 +12,25 @@ import {
   AnimatePresence,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
-import BlurText from "../animations/BlurText";
+import BlurText from "../animations/AnimatedText";
 import { BsArrow90DegDown, BsPhone } from "react-icons/bs";
 import Button from "../buttons/Button";
 import ButtonDoubleIcon from "../buttons/ButtonDoubleIcon";
 import { IoCall } from "react-icons/io5";
-import AnimatedText from "../animations/BlurText";
+import AnimatedText from "../animations/AnimatedText";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import "./styles.css";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 const services = [
   {
@@ -35,7 +48,7 @@ const services = [
     icon: "/services/fuites-icon.png",
   },
   {
-    title: "Chauffe-eau & Chaudière",
+    title: "Chauffe-eau ",
     paragraph:
       "Spécialistes en chauffage et production d'eau chaude, nous installons et remplaçons tous types d'équipements : chaudières gaz, chauffe-eau électriques et thermodynamiques. Installation sécurisée avec mise en service complète incluse.",
     image: "/services/chauffe-eau.png",
@@ -49,7 +62,7 @@ const services = [
     icon: "/services/carrelage-icon.png",
   },
   {
-    title: "Salle de bain clé en main",
+    title: "Salle de bain ",
     paragraph:
       "Rénovation complète de votre salle de bain de la conception à la finition. Notre service inclut la plomberie, l'électricité, le carrelage, la menuiserie et tous les équipements sanitaires pour un résultat harmonieux et fonctionnel.",
     image: "/services/salle-de-bain.png",
@@ -100,7 +113,7 @@ const miniservices = [
     icon: "/services/fuites-icon.png",
   },
   {
-    title: "Chauffe-eau & Chaudière",
+    title: "Chauffage",
     paragraph:
       "Installation et remplacement de chaudières gaz, chauffe-eau électriques et thermodynamiques. Installation sécurisée.",
     image: "/services/chauffe-eau.png",
@@ -114,7 +127,7 @@ const miniservices = [
     icon: "/services/carrelage-icon.png",
   },
   {
-    title: "Salle de bain clé en main",
+    title: "Bains",
     paragraph:
       "Rénovation complète : plomberie, électricité, carrelage, menuiserie. Résultat harmonieux et fonctionnel.",
     image: "/services/salle-de-bain.png",
@@ -135,14 +148,14 @@ const miniservices = [
     icon: "/services/peinture-icon.png",
   },
   {
-    title: "Rénovation globale",
+    title: "Rénovation",
     paragraph:
       "Transformation complète avec coordination de tous les corps de métier. Gestion de projet intégrale.",
     image: "/services/renovation.png",
     icon: "/services/renovation-icon.png",
   },
   {
-    title: "Contactez-nous",
+    title: "contactez-nous",
     paragraph: (
       <Button text="+33 611 231 314" className="call-btn" icon={<IoCall />} />
     ),
@@ -152,16 +165,25 @@ const miniservices = [
 ];
 
 export default function ServicesSection() {
+  const headerRef = useRef();
   const sectionRef = useRef();
-  const cardRef = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    // container: headerRef,
+    offset: ["start center", "center end"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
+  const borderRadius = useTransform(scrollYProgress, [0, 1], ["40px", "10px"]);
+  const y = useTransform(scrollYProgress, [0, 1], [50, 0]);
 
   const isSectionInView = useInView(sectionRef, {
     amount: 0.1,
     margin: "20px",
   });
-  const isCardInView = useInView(cardRef, {
-    amount: 0.2,
-  });
+
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -188,38 +210,40 @@ export default function ServicesSection() {
 
   return (
     <motion.section
+      style={{ scale, opacity, borderRadius, y }}
       ref={sectionRef}
-      initial={{ opacity: 0, y: 100, scale: 0.9 }}
-      animate={
-        isSectionInView
-          ? {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              borderRadius: "10px",
-              transition: {
-                duration: 0.8,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                staggerChildren: 0.1,
-                delayChildren: 0.2,
-              },
-            }
-          : {
-              opacity: 0.7,
-              y: 50,
-              scale: 0.95,
-              borderRadius: "40px",
-              transition: {
-                duration: 0.6,
-                ease: "easeInOut",
-              },
-            }
-      }
+      // initial={{ opacity: 0, y: 100, scale: 0.9 }}
+      // animate={
+      //   isSectionInView
+      //     ? {
+      //         opacity: 1,
+      //         y: 0,
+      //         scale: 1,
+      //         borderRadius: "10px",
+      //         transition: {
+      //           duration: 0.8,
+      //           ease: [0.25, 0.46, 0.45, 0.94],
+      //           staggerChildren: 0.1,
+      //           delayChildren: 0.2,
+      //         },
+      //       }
+      //     : {
+      //         opacity: 0.7,
+      //         y: 50,
+      //         scale: 0.95,
+      //         borderRadius: "40px",
+      //         transition: {
+      //           duration: 0.6,
+      //           ease: "easeInOut",
+      //         },
+      //       }
+      // }
       id="services"
       className="services-section"
     >
       <div className="servicess">
         <motion.header
+          ref={headerRef}
           initial={{ opacity: 0, y: 30 }}
           animate={
             isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
@@ -265,7 +289,7 @@ export default function ServicesSection() {
         <motion.div className="servicess-container">
           {miniservices.map(({ icon, title, paragraph }, i) => (
             <motion.div
-              ref={cardRef}
+              // ref={cardRef}
               key={title}
               className="service"
               initial={{ opacity: 0, y: 40, scale: 0.9 }}
@@ -374,13 +398,138 @@ export default function ServicesSection() {
           ))}
         </motion.div>
       </div>
+      <section className="slider-section-wrapper">
+        <div className="container slider-section">
+          <Swiperr />
+        </div>
+      </section>
     </motion.section>
+  );
+}
+
+<div className="container services-section">
+  {/* <header>
+          <h1>Nos Services à Votre Portée</h1>
+
+          <p>
+            Des interventions rapides, efficaces et de qualité pour tous vos
+            besoins en plomberie et rénovation
+          </p>
+        </header> */}
+  <div className="services-content">
+    {/* <h1>all what you need in one place</h1> */}
+
+    {/* <motion.div className="services-container">
+            {services.map(({ title, paragraph, image, icon }) => (
+              <ServiceCard
+                key={title}
+                title={title}
+                paragraph={paragraph}
+                image={image}
+                icon={icon}
+              />
+            ))}
+          </motion.div> */}
+  </div>
+</div>;
+
+function Swiperr() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const swiperRef = useRef(null);
+  const containerRef = useRef(null);
+
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
+
+  const isInView = useInView(containerRef, { amount: 0.3, once: false });
+
+  // control autoplay based on visibility
+  if (swiperRef.current) {
+    if (isInView) {
+      swiperRef.current.autoplay.start();
+    } else {
+      swiperRef.current.autoplay.stop();
+    }
+  }
+
+  return (
+    <div ref={containerRef}>
+      <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        ref={swiperRef}
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        modules={[Autoplay, Navigation]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        onInit={(swiper) => {
+          // attach refs after init
+          swiper.params.navigation.prevEl = prevRef.current;
+          swiper.params.navigation.nextEl = nextRef.current;
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
+        className="swiper-container"
+      >
+        {services.map((service, index) => (
+          <SwiperSlide key={index}>
+            <ServiceCard
+              title={service.title}
+              paragraph={service.paragraph}
+              image={service.image}
+              icon={service.icon}
+            />
+          </SwiperSlide>
+        ))}
+
+        {/* ✅ Put custom buttons once here */}
+
+        {/* Autoplay progress indicator */}
+        <div className="autoplay-progress" slot="container-end">
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span ref={progressContent}></span>
+        </div>
+      </Swiper>
+      <div className="swiper-button-prev-custom">
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          ref={prevRef}
+          className="btn-reset custom-prev"
+        >
+          <FaChevronCircleLeft size={32} />
+        </motion.button>
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          ref={nextRef}
+          className="btn-reset custom-next"
+        >
+          <FaChevronCircleRight size={32} />
+        </motion.button>
+      </div>
+    </div>
   );
 }
 
 const ServiceCard = ({ title, paragraph, image, icon }) => {
   const cardRef = useRef();
-  const isCardInView = useInView(cardRef, { amount: 0.8 });
+  const isCardInView = useInView(cardRef, { amount: 0.2 });
   return (
     <motion.article
       ref={cardRef}
@@ -409,11 +558,10 @@ const ServiceCard = ({ title, paragraph, image, icon }) => {
         </motion.div>
         <div className="content">
           <h2>
-            <BlurText text={title} />
+            <AnimatedText text={title} />
           </h2>
-          <div>
-            <BlurText speed={0.01} blur={false} text={paragraph} />
-          </div>
+          <p>{paragraph}</p>
+          {/* <AnimatedText speed={0.01} blur={false} text={paragraph} /> */}
         </div>
       </motion.div>
       <motion.span
@@ -434,29 +582,3 @@ const ServiceCard = ({ title, paragraph, image, icon }) => {
     </motion.article>
   );
 };
-
-<div className="container services-section">
-  {/* <header>
-          <h1>Nos Services à Votre Portée</h1>
-
-          <p>
-            Des interventions rapides, efficaces et de qualité pour tous vos
-            besoins en plomberie et rénovation
-          </p>
-        </header> */}
-  <div className="services-content">
-    {/* <h1>all what you need in one place</h1> */}
-
-    {/* <motion.div className="services-container">
-            {services.map(({ title, paragraph, image, icon }) => (
-              <ServiceCard
-                key={title}
-                title={title}
-                paragraph={paragraph}
-                image={image}
-                icon={icon}
-              />
-            ))}
-          </motion.div> */}
-  </div>
-</div>;
