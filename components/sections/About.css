@@ -55,6 +55,9 @@
   width: 100%;
   padding: 3rem 2rem;
 }
+.about-container main .feature p {
+  font-weight: 500;
+}
 .about-container main .feature svg {
   font-size: 4rem;
   color: #ffbe9b;
