@@ -1,9 +1,10 @@
 .projects-section {
   padding: 10rem 2rem;
-  background: url(/back.jpg), #000000f2;
+  background-image: url("/back.jpg"), linear-gradient(#000000f2, #000000f2);
   background-blend-mode: darken;
-  /* background-attachment: fixed; */
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* try cover instead of contain for better blending */
 }
 
 .projects-container {
