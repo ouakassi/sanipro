@@ -2,6 +2,7 @@ footer {
   background-color: #0a0a0a;
   background-color: #000b15;
   padding: 4rem 2rem 1rem 2rem;
+  padding: 25rem 2rem 1rem 2rem;
 }
 .footer {
   /* background: url("/footer-background.png") no-repeat center center; */
@@ -56,17 +57,19 @@ footer {
 
 .contact-info-container .social-media {
   display: flex;
-  gap: 2rem;
+  align-self: center;
+  gap: 4rem;
   margin-top: 1rem;
 }
 
 .social-media svg {
   color: white;
   font-size: 2.5rem;
+  transition: 0.3s;
 }
 
 .social-media a {
-  transition: 0.3s;
+  padding: 1rem;
 }
 .social-media a:hover svg {
   color: #ff6600;
@@ -81,15 +84,14 @@ footer {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  /* gap: 2rem; */
   /* flex-wrap: wrap; */
   /* justify-content: center; */
 }
 .links h4 {
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #3b92e6;
-  /* color: #f4df35; */
+  color: white;
 }
 .links ul {
   display: flex;
@@ -154,7 +156,7 @@ footer {
   gap: 0.6rem;
 }
 .links .info li svg {
-  color: #ff6600;
+  color: var(--second-color);
   font-size: 2rem;
 }
 /* @media (max-width: 600px) {

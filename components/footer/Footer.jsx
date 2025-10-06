@@ -72,6 +72,7 @@ export const legalLinks = [
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer>
       <div className="container footer">
@@ -81,9 +82,9 @@ export default function Footer() {
               <Logo className="footer-logo" />
             </div>
             <p>
-              At Pamar, we are committed to delivering unparalleled quality and
-              precision in every facet of our operations. From the moment you
-              reach out to us, through our expert.
+              Chez Sanipro, nous garantissons une qualité et une précision
+              exceptionnelles dans tous nos projets, avec un professionnalisme
+              constant du premier contact jusqu’au résultat final.
             </p>
             <div className="contact-info-container">
               <ul className="social-media">
@@ -141,7 +142,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="bottom-footer">
-          <p>© 2024 Pamar. All rights reserved.</p>
+          <p>© {year} SANIPRO. All rights reserved.</p>
           <ul>
             {legalLinks.map((link, i) => (
               <li key={i}>
