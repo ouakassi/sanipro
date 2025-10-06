@@ -59,7 +59,7 @@ export default function Header() {
             <NavItem key={title} title={title} link={link} />
           ))}
         </NavList>
-        <Button icon={<FaPhoneAlt />} text={"+33 611 231 314"} />
+        <Button icon={<FaPhoneAlt />} text={"appelez-nous  +33 611 231 314"} />
       </nav>
     </motion.header>
   );
