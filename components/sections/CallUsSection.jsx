@@ -57,7 +57,7 @@ export default function CallUsSection() {
             identifié et expérimenté, intervient chez vous avec sérieux et
             efficacité.
           </p>
-          <Button text="Get a Free Estimate" href="#contact" />
+          <Button text="Obtenez un devis gratuit" href="#contact" />
         </div>
       </div>
     </section>
