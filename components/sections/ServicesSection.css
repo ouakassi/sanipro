@@ -262,25 +262,26 @@
 }
 article .icon {
   position: absolute;
-  top: -7%;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  inset: 0;
   margin: auto;
+  transform: translateX(-50%);
   display: flex;
-  z-index: 1;
+  align-items: center;
+  justify-content: center;
+
   background: white;
   padding: 1rem;
   border-radius: 50%;
-  align-items: center;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  z-index: 1;
+
+  height: max-content;
+  width: max-content;
   max-width: 8rem;
-  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+
   box-shadow: inset #7fc0ff 2px 0px 0px 0px;
-  /* box-shadow: inset rgb(0 0 0 / 10%) 0px 0px 8px 2px; */
 }
 
 article .icon img {
