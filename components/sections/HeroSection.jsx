@@ -52,8 +52,8 @@ const itemVariants = {
 
 export default function HeroSection() {
   return (
-    <section id="accueil" className="hero-container">
-      <div className="container hero">
+    <section id="accueil" className="hero-section">
+      <div className="container hero-container">
         <div className="content">
           <h2>
             <FaClock />

@@ -258,3 +258,55 @@
   padding: 1.2rem 2rem;
   background: linear-gradient(0deg, #ff1111 0%, #ff9191 100%);
 }
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 480px) {
+  .steps-section {
+    padding: 6rem 1rem;
+    padding-top: 30rem;
+  }
+
+  .steps header h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .line-container {
+    right: 13%;
+    /* z-index: -1; */
+  }
+
+  .steps .card {
+    padding: 5rem 1rem 4rem 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    background: linear-gradient(to top, #361403 0%, #953a09d9 200%);
+  }
+
+  .steps .card .img-container {
+    transform: translateY(0) !important;
+  }
+
+  .steps .card .content h2 {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+}

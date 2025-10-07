@@ -47,3 +47,34 @@
 .call-us-container .content button {
   align-self: flex-start;
 }
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 480px) {
+  .call-us-container {
+    gap: 5rem;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .imgs-container {
+    flex: unset;
+    height: 50rem;
+  }
+}
+
+@media (max-width: 360px) {
+}

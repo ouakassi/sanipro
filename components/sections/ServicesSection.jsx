@@ -89,12 +89,12 @@ const services = [
     image: "/services/renovation.png",
     icon: "/services/renovation-icon.png",
   },
-  {
-    title: "contactez-nous",
-    paragraph: <Button text="0611423116" />,
-    image: "/services/renovation.png",
-    icon: "/services/contact.png",
-  },
+  // {
+  //   title: "contactez-nous",
+  //   paragraph: <Button text="0611423116" />,
+  //   image: "/services/renovation.png",
+  //   icon: "/services/contact.png",
+  // },
 ];
 
 const miniservices = [
@@ -400,7 +400,7 @@ export default function ServicesSection() {
       </div>
       <section className="slider-section-wrapper">
         <div className="container slider-section">
-          <Swiperr />
+          <CardsSlider items={services} />
         </div>
       </section>
     </motion.section>
@@ -433,7 +433,7 @@ export default function ServicesSection() {
   </div>
 </div>;
 
-function Swiperr() {
+function CardsSlider({ items }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const progressCircle = useRef(null);
@@ -466,6 +466,7 @@ function Swiperr() {
         centeredSlides={true}
         autoplay={{
           delay: 2000,
+          delay: 20000000,
           disableOnInteraction: false,
         }}
         // pagination={{
@@ -475,6 +476,7 @@ function Swiperr() {
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
+        slidesPerView={1}
         modules={[Autoplay, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         onInit={(swiper) => {
@@ -486,13 +488,12 @@ function Swiperr() {
         }}
         className="swiper-container"
       >
-        {services.map((service, index) => (
+        {items.map((service, index) => (
           <SwiperSlide key={index}>
             <ServiceCard
               title={service.title}
               paragraph={service.paragraph}
               image={service.image}
-              icon={service.icon}
             />
           </SwiperSlide>
         ))}
@@ -527,7 +528,7 @@ function Swiperr() {
   );
 }
 
-const ServiceCard = ({ title, paragraph, image, icon }) => {
+const ServiceCard = ({ title, paragraph, image }) => {
   const cardRef = useRef();
   const isCardInView = useInView(cardRef, { amount: 0.2 });
   return (
@@ -564,21 +565,6 @@ const ServiceCard = ({ title, paragraph, image, icon }) => {
           {/* <AnimatedText speed={0.01} blur={false} text={paragraph} /> */}
         </div>
       </motion.div>
-      <motion.span
-        animate={
-          isCardInView ? { opacity: 1, rotate: 0 } : { opacity: 0, rotate: 300 }
-        }
-        transition={{ delay: 0.4 }}
-        className="icon"
-      >
-        <Image
-          src={icon}
-          width={80}
-          height={80}
-          unoptimized
-          alt={title + " icon"}
-        />
-      </motion.span>
     </motion.article>
   );
 };

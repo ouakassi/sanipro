@@ -3,6 +3,23 @@ import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
 import "./ContactSction.css";
 import MiniLogo from "../logo/MiniLogo";
 
+const contactCards = [
+  {
+    icon: <FaPhone />,
+    title: "Appelez-nous",
+    content: "+33 6 81 18 05 25",
+  },
+  {
+    icon: <FaLocationDot />,
+    title: "Rendez-nous visite",
+    content: "24 avenue de Stalingrad – 21000 Dijon",
+  },
+  {
+    icon: <FaEnvelope />,
+    title: "Écrivez-nous",
+    content: "service-client@saniprosarl.fr",
+  },
+];
 export default function ContactSction() {
   return (
     <section className="contact-section">
@@ -34,27 +51,15 @@ export default function ContactSction() {
           ></iframe>
         </div>
         <div className="cards">
-          <div className="card">
-            <FaPhone />
-            <div className="data">
-              <h3>call us</h3>
-              <p>+33 6 81 18 05 25</p>
+          {contactCards.map((card, index) => (
+            <div className="card" key={index}>
+              {card.icon}
+              <div className="data">
+                <h3>{card.title}</h3>
+                <p>{card.content}</p>
+              </div>
             </div>
-          </div>
-          <div className="card">
-            <FaLocationDot />
-            <div className="data">
-              <h3>visite us</h3>
-              <p>24 avenue de Stalingrad – 21000 DIJON</p>
-            </div>
-          </div>
-          <div className="card">
-            <FaEnvelope />
-            <div className="data">
-              <h3>email us</h3>
-              <p>service-client@saniprosarl.fr</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

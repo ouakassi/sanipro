@@ -73,3 +73,30 @@
   filter: grayscale(1) hue-rotate(45deg);
   filter: invert(1);
 }
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 480px) {
+  .timeline-track {
+    gap: 4rem;
+  }
+  .timeline-item h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+}

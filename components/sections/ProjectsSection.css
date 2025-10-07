@@ -223,3 +223,66 @@
   width: 40rem;
   cursor: pointer;
 }
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 10rem 1rem;
+  }
+
+  .projects-container .section-header {
+    padding: 1rem;
+  }
+
+  .projects-container .section-header h1 {
+    font-size: 4rem;
+  }
+
+  .row {
+    margin-top: 8rem;
+    flex-direction: column;
+    gap: 8rem;
+  }
+
+  .projects-container .compare-slider {
+    height: 50rem;
+  }
+  .materials-header {
+    padding: 1rem;
+  }
+  .materials-header h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .materials {
+    display: flex;
+    margin-top: 15rem;
+    flex-direction: column;
+  }
+
+  .materias-imgs {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 1rem;
+    gap: 2rem;
+    padding: 6rem 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+}

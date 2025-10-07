@@ -55,9 +55,7 @@
   padding: 1rem;
   text-align: center;
   flex: 1;
-  transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  border: 1px solid transparent;
   min-width: 40rem;
   background: linear-gradient(to bottom, #ffe9dd, #ffe8db);
 
@@ -82,5 +80,45 @@
 .contact-section .card svg {
   font-size: 4rem;
   color: var(--main-color);
-  margin-bottom: 1rem;
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 6rem 1rem;
+  }
+
+  .contact-section header {
+    flex-direction: column;
+  }
+
+  .contact-section .map-container {
+    width: 100%;
+  }
+
+  .contact-section .card svg {
+    font-size: 3rem;
+  }
+
+  .contact-section .card {
+    flex-direction: column;
+    min-width: 90vw;
+  }
+}
+
+@media (max-width: 360px) {
 }
