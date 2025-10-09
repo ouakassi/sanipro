@@ -70,4 +70,7 @@
 }
 
 @media (max-width: 360px) {
+  .top-header-navbar > div:nth-child(1) > div > svg {
+    display: none;
+  }
 }
