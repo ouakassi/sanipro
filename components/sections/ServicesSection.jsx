@@ -171,12 +171,12 @@ export default function ServicesSection() {
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     // container: headerRef,
-    offset: ["start center", "center end"],
+    offset: ["start end", "start center"],
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
-  const borderRadius = useTransform(scrollYProgress, [0, 1], ["40px", "10px"]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const borderRadius = useTransform(scrollYProgress, [0, 1], ["400px", "0px"]);
   const y = useTransform(scrollYProgress, [0, 1], [50, 0]);
 
   const isSectionInView = useInView(sectionRef, {
@@ -184,254 +184,157 @@ export default function ServicesSection() {
     margin: "20px",
   });
 
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  console.log("current : ", sectionRef.current);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = sectionRef.scrollY;
-
-      console.log(currentScrollY);
-
-      // Hide header when scrolled down, show when at top
-      if (currentScrollY > 0) {
-        setIsVisible(false);
-      }
-      if (currentScrollY === 0) {
-        setIsVisible(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
   return (
     <motion.section
       style={{ scale, opacity, borderRadius, y }}
       ref={sectionRef}
-      // initial={{ opacity: 0, y: 100, scale: 0.9 }}
-      // animate={
-      //   isSectionInView
-      //     ? {
-      //         opacity: 1,
-      //         y: 0,
-      //         scale: 1,
-      //         borderRadius: "10px",
-      //         transition: {
-      //           duration: 0.8,
-      //           ease: [0.25, 0.46, 0.45, 0.94],
-      //           staggerChildren: 0.1,
-      //           delayChildren: 0.2,
-      //         },
-      //       }
-      //     : {
-      //         opacity: 0.7,
-      //         y: 50,
-      //         scale: 0.95,
-      //         borderRadius: "40px",
-      //         transition: {
-      //           duration: 0.6,
-      //           ease: "easeInOut",
-      //         },
-      //       }
-      // }
       id="services"
       className="services-section"
     >
-      <div className="servicess">
-        <motion.header
-          ref={headerRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={
-            isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-          }
-          transition={{
-            duration: 0.6,
-            delay: 0.3,
-            ease: "easeOut",
-          }}
+      <motion.header
+        ref={headerRef}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.6,
+          delay: 0.3,
+        }}
+      >
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            animate={
-              isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            nos Services
-          </motion.h3>
+          nos Services
+        </motion.h3>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={
-              isSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            Nos Services à Votre Portée
-          </motion.h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          Nos Services à Votre Portée
+        </motion.h1>
 
-          <motion.p>
-            {isSectionInView && (
-              <AnimatedText
-                text="Des interventions rapides, efficaces et de qualité pour tous vos
+        <motion.p>
+          <AnimatedText
+            text="Des interventions rapides, efficaces et de qualité pour tous vos
             besoins en plomberie et rénovation"
-                speed={0.02}
-                blur={false}
-              />
-            )}
-          </motion.p>
-        </motion.header>
+            speed={0.02}
+            blur={false}
+          />
+        </motion.p>
+      </motion.header>
 
-        <motion.div className="servicess-container">
-          {miniservices.map(({ icon, title, paragraph }, i) => (
-            <motion.div
-              // ref={cardRef}
-              key={title}
-              className="service"
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={
-                isSectionInView
-                  ? {
-                      opacity: 1,
-                      y: 0,
-                      scale: 1,
-                      transition: {
-                        duration: 0.5,
-                        delay: i * 0.1,
-                        ease: [0.25, 0.46, 0.45, 0.94],
-                      },
-                    }
-                  : {
-                      opacity: 0,
-                      y: 40,
-                      scale: 0.9,
-                      transition: {
-                        duration: 0.3,
-                        delay: (miniservices.length - i) * 0.1,
-                      },
-                    }
-              }
-            >
-              <motion.span
-                className="icon-container"
-                initial={{
-                  y: -30,
-                  opacity: 0,
-                  scale: 0.3,
-                  rotate: -10,
-                }}
-                whileInView={{
-                  y: 0,
-                  opacity: 1,
-                  scale: 1,
-                  rotate: 0,
-                }}
-                viewport={
-                  {
-                    // once: true,
-                    // amount: 1,
-                  }
-                }
-                transition={{
-                  type: "spring",
-                  damping: 12, // More bounce for water effect
-                  stiffness: 400,
-                  mass: 1,
-                  delay: 0.2, // Slight delay for better timing
-                }}
-                // Add a subtle secondary animation
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 },
-                }}
-              >
-                <img src={icon} alt="" />
-              </motion.span>
-
-              <motion.div
-                className="service-content"
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                  transition: {
-                    duration: 0.3,
-                    delay: (miniservices.length - i) * 0.02,
-                  },
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.5,
-                    delay: i * 0.1 + 0.1,
-                    ease: "easeOut",
-                  },
-                }}
-              >
-                <motion.h2
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: i * 0.1 + 0.2,
-                  }}
-                >
-                  {title}
-                </motion.h2>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.4,
-                    delay: i * 0.1 + 0.3,
-                  }}
-                >
-                  {paragraph}
-                </motion.p>
-              </motion.div>
-            </motion.div>
-          ))}
-        </motion.div>
+      <div className="container slider-section">
+        <CardsSlider items={services} />
       </div>
-      <section className="slider-section-wrapper">
-        <div className="container slider-section">
-          <CardsSlider items={services} />
-        </div>
-      </section>
+      <motion.div className="mini-services-container">
+        {miniservices.map(({ icon, title, paragraph }, i) => (
+          <motion.div
+            key={title}
+            className="service"
+            initial={{ opacity: 0, y: 40, scale: 0.9 }}
+            animate={
+              isSectionInView
+                ? {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      duration: 0.5,
+                      delay: i * 0.1,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    },
+                  }
+                : {
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.9,
+                    transition: {
+                      duration: 0.3,
+                      delay: (miniservices.length - i) * 0.1,
+                    },
+                  }
+            }
+          >
+            <motion.span
+              className="icon-container"
+              initial={{
+                y: -30,
+                opacity: 0,
+                scale: 0.3,
+                rotate: -10,
+              }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                rotate: 0,
+              }}
+              transition={{
+                type: "spring",
+                damping: 12,
+                stiffness: 400,
+                mass: 1,
+                delay: 0.2,
+              }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.2 },
+              }}
+            >
+              <img src={icon} alt="" />
+            </motion.span>
+
+            <motion.div
+              className="service-content"
+              initial={{
+                opacity: 0,
+                y: 20,
+                transition: {
+                  duration: 0.3,
+                  delay: (miniservices.length - i) * 0.02,
+                },
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                  delay: i * 0.1 + 0.1,
+                  ease: "easeOut",
+                },
+              }}
+            >
+              <motion.h2
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: i * 0.1 + 0.2,
+                }}
+              >
+                {title}
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: i * 0.1 + 0.3,
+                }}
+              >
+                {paragraph}
+              </motion.p>
+            </motion.div>
+          </motion.div>
+        ))}
+      </motion.div>
     </motion.section>
   );
 }
-
-<div className="container services-section">
-  {/* <header>
-          <h1>Nos Services à Votre Portée</h1>
-
-          <p>
-            Des interventions rapides, efficaces et de qualité pour tous vos
-            besoins en plomberie et rénovation
-          </p>
-        </header> */}
-  <div className="services-content">
-    {/* <h1>all what you need in one place</h1> */}
-
-    {/* <motion.div className="services-container">
-            {services.map(({ title, paragraph, image, icon }) => (
-              <ServiceCard
-                key={title}
-                title={title}
-                paragraph={paragraph}
-                image={image}
-                icon={icon}
-              />
-            ))}
-          </motion.div> */}
-  </div>
-</div>;
 
 function CardsSlider({ items }) {
   const prevRef = useRef(null);
