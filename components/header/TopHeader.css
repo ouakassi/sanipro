@@ -1,6 +1,6 @@
 .top-header {
   width: 100%;
-  background-color: rgb(15 35 61);
+  background-color: rgb(3 32 74);
 }
 
 .top-header-navbar {
@@ -37,4 +37,37 @@
 .socials {
 }
 .working-hours {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .top-header-navbar {
+    padding: 1rem;
+    justify-content: center;
+  }
+  .top-header-navbar > div:first-child {
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 360px) {
 }

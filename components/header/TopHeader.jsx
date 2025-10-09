@@ -16,7 +16,7 @@ export default function TopHeader() {
     <header className="top-header">
       <nav className="container top-header-navbar">
         <div>
-          <div className="working-hours">
+          <div className="working-hours desktop-only">
             <FaClock /> Horaires : 24h/24 7j/7
           </div>
           <div className="email">
@@ -26,7 +26,7 @@ export default function TopHeader() {
             <FaPhone /> +33 611 231 314
           </div>
         </div>
-        <div className="socials">
+        <div className="socials desktop-only">
           {socialData.map(({ icon, name, link }) => (
             <SocialContainer key={name} icon={icon} name={name} link={link} />
           ))}
