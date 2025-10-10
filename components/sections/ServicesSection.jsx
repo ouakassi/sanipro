@@ -186,7 +186,13 @@ export default function ServicesSection() {
 
   return (
     <motion.section
-      style={{ scale, opacity, borderRadius, y }}
+      style={{
+        scale,
+        // opacity,
+
+        borderRadius,
+        y,
+      }}
       ref={sectionRef}
       id="services"
       className="services-section"

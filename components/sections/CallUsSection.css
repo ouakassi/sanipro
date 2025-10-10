@@ -39,7 +39,8 @@
 }
 
 .call-us-container .content h1 {
-  font-size: 3.6rem;
+  font-size: var(--fs-h1);
+  margin: 0;
 }
 .call-us-container .content p {
   font-size: 1.8rem;
@@ -58,6 +59,12 @@
 }
 
 @media (max-width: 768px) {
+  .call-us-container {
+    gap: 5rem;
+  }
+  .imgs-container {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
@@ -65,7 +72,6 @@
 
 @media (max-width: 480px) {
   .call-us-container {
-    gap: 5rem;
     flex-direction: column;
     padding: 1rem;
   }
@@ -77,4 +83,7 @@
 }
 
 @media (max-width: 360px) {
+  .call-us-container .content h1 {
+    font-size: 3rem;
+  }
 }

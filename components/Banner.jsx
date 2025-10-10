@@ -3,14 +3,37 @@ import "./Banner.css";
 import Button from "./buttons/Button";
 import { BsPhone } from "react-icons/bs";
 import { IoCall } from "react-icons/io5";
+import { motion } from "motion/react";
 
 export default function Banner() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        // Delay the content appearance until the cover animation is almost done
+        delayChildren: 0.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className="banner-section">
-      <div className="container banner">
-        <div className="image-container">
+      <motion.div
+        variants={containerVariants}
+        initial={"hidden"}
+        animate={"visible"}
+        className="container banner"
+      >
+        <motion.div className="image-container">
           <img src="/banner/sanipro-car.png" alt="sanipro car" />
-        </div>
+        </motion.div>
         <div className="content">
           <h1>
             Panne aujourd'hui ?<br /> réparé aujourd'hui !
@@ -117,7 +140,7 @@ export default function Banner() {
             stroke-width="1.2572"
           />
         </svg>
-      </div>
+      </motion.div>
     </section>
   );
 }

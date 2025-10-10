@@ -32,13 +32,29 @@
 .hero-container .content {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 .hero-container .content h1 {
-  font-size: 8rem;
+  font-size: clamp(4rem, 5vw, 8rem);
+
   margin: 1rem 0;
   color: rgb(25 94 171);
 }
+
+.header-container {
+  overflow: hidden;
+  background-color: var(--main-color);
+  background-color: #195eab;
+  background: linear-gradient(45deg, #195eab, #0a97ff);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: fit-content;
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  margin: 2rem 0rem;
+}
+
 .hero-container h2 {
   display: flex;
   align-items: center;
@@ -52,10 +68,6 @@
   padding: 0.4rem 1rem;
   border-radius: 10px;
   font-weight: 300;
-}
-.hero-container .content p {
-  color: rgb(70, 70, 70);
-  letter-spacing: 1px;
 }
 
 .hero-container .content ul {
@@ -76,7 +88,7 @@
   /* border: 1px solid #ffb083; */
   /* color: white; */
   /* padding: 1.2rem 2rem; */
-  /* border-radius: 10px; */
+  border-radius: 10px;
   box-shadow: rgba(255, 136, 24, 0.25) inset 0px 13px 27px -5px,
     rgba(252, 252, 252, 0.5) inset 0px 8px 16px -8px;
   transition: 0.2s all;
@@ -100,6 +112,7 @@
 }
 .hero-container .hero-image-container {
   padding: 1rem;
+  width: min(100%, 60rem);
 }
 
 .hero-container .hero-image-container img {
@@ -126,21 +139,6 @@
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-.header-container {
-  overflow: hidden;
-  background-color: var(--main-color);
-  background-color: #195eab;
-  /* background: linear-gradient(45deg, #195eab, #0a97ff); */
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  width: fit-content;
-  color: #ffffff;
-  padding: 0.4rem 1rem;
-  border-radius: 10px;
-  font-size: 5rem;
-  margin: 2rem 0rem;
-}
-
 @media (max-width: 1440px) {
 }
 
@@ -151,6 +149,10 @@
 }
 
 @media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    gap: 4rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -158,19 +160,18 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    padding-top: 2rem 1rem;
+    padding: 2rem;
   }
 
-  .hero-container {
-    flex-direction: column;
-    gap: 4rem;
-  }
-
-  .hero-container .content h1,
+  /* .hero-container .content h1,
   .header-container {
     font-size: 4.5rem;
-  }
+  } */
 }
 
 @media (max-width: 360px) {
+  /* .hero-container .content h1,
+  .header-container {
+    font-size: 4rem;
+  } */
 }

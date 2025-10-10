@@ -31,19 +31,23 @@ const contactInfo = [
 const socialLinks = [
   {
     icon: <FaFacebook />,
-    url: "https://www.facebook.com/", //
+    url: "https://www.facebook.com/",
+    label: "facebook",
   },
   {
     icon: <FaInstagram />,
     url: "https://www.instagram.com/",
+    label: "instagram",
   },
   {
     icon: <FaWhatsapp />,
     url: "https://wa.me/33681180525",
+    label: "whatsapp",
   },
   {
     icon: <FaLinkedin />,
     url: "https://www.linkedin.com/",
+    label: "linkedin",
   },
 ];
 
@@ -90,7 +94,11 @@ export default function Footer() {
               <ul className="social-media">
                 {socialLinks.map((item, i) => (
                   <li key={i}>
-                    <Link href={item.url} target="_blank">
+                    <Link
+                      href={item.url}
+                      data-label={item.label}
+                      target="_blank"
+                    >
                       {item.icon}
                     </Link>
                   </li>
@@ -111,7 +119,7 @@ export default function Footer() {
             </div> */}
 
             <div className="links">
-              <h4>Liens Rapides</h4>
+              <h4>Liens</h4>
               <ul>
                 {quickLinks.map((link, i) => (
                   <li key={i}>

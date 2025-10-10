@@ -1,6 +1,5 @@
 .steps-section {
   padding: 6rem 2rem;
-  padding-top: 45rem;
 }
 
 .steps {
@@ -26,7 +25,8 @@
 }
 
 .steps header h1 {
-  font-size: 4rem;
+  font-size: min(var(--fs-h1), 5rem);
+  text-align: center;
 }
 
 .steps-main {
@@ -47,10 +47,11 @@
 .steps .card .content {
   display: flex;
   flex-direction: column;
-  max-width: 80rem;
+  max-width: 70rem;
   gap: 2rem;
   padding: 1rem;
   width: 100%;
+  flex: 2;
 }
 
 .card span img {
@@ -67,6 +68,7 @@
   max-width: 40rem;
   border-radius: 50%;
   border: 2px solid rgb(255 137 68);
+  flex: 1;
 }
 
 .steps .card .img-container img {
@@ -95,23 +97,19 @@
   object-position: center;
 }
 
-/* .steps .card .img-container .mask {
+.steps .card .img-container .mask {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.2) 53%,
-    rgb(11 40 83) 120%
-  );
+  background: transparent;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   pointer-events: none;
   transition: background 0.3s ease;
-} */
+}
 
 .card-backgroundd {
   background: url("/steps/background.png");
@@ -168,7 +166,7 @@
   z-index: 1;
 }
 .steps .card .content h2 {
-  font-size: 4rem;
+  font-size: clamp(3rem, 4vw, 4rem);
   color: #000000;
   /* text-shadow: 0px 5px 1px #111111c9; */
   /* background: linear-gradient(322deg, #a7a7a7, #f4f4f4); */
@@ -257,6 +255,7 @@
   font-size: 1.8rem;
   padding: 1.2rem 2rem;
   background: linear-gradient(0deg, #ff1111 0%, #ff9191 100%);
+  box-shadow: 0 0.7em 1.5em -0.5em #ff6464;
 }
 
 @media (max-width: 1440px) {
@@ -266,6 +265,20 @@
 }
 
 @media (max-width: 1024px) {
+  .steps .card {
+    padding: 5rem 1rem 4rem 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    background: linear-gradient(to top, #361403 0%, #953a09d9 200%);
+  }
+
+  .steps .card .img-container {
+    transform: translateY(0) !important;
+  }
+  .line-container {
+    right: 6rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -280,33 +293,13 @@
     padding-top: 30rem;
   }
 
-  .steps header h1 {
-    font-size: 4rem;
-    text-align: center;
-  }
-
-  .line-container {
-    right: 13%;
-    /* z-index: -1; */
-  }
-
-  .steps .card {
-    padding: 5rem 1rem 4rem 1rem;
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 2rem;
-    background: linear-gradient(to top, #361403 0%, #953a09d9 200%);
-  }
-
-  .steps .card .img-container {
-    transform: translateY(0) !important;
-  }
-
   .steps .card .content h2 {
     text-align: center;
-    font-size: 3.5rem;
   }
 }
 
 @media (max-width: 360px) {
+  .line-container {
+    right: 5rem;
+  }
 }

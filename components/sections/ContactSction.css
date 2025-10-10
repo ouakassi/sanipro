@@ -10,10 +10,9 @@
 }
 
 .contact-section header h1 {
-  /* text-align: center; */
   font-size: 4rem;
-  margin-bottom: 4rem;
   font-family: var(--font-secondary);
+  margin: auto;
 }
 
 .contact-section header h1 span {
@@ -35,6 +34,7 @@
   border-radius: 20px;
   overflow: hidden;
   margin: auto;
+  max-width: 100%;
 }
 
 .contact-section .cards {
@@ -89,9 +89,15 @@
 }
 
 @media (max-width: 1024px) {
+  .contact-section header {
+    gap: 4rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .contact-section header {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
@@ -100,14 +106,6 @@
 @media (max-width: 480px) {
   .contact-section {
     padding: 6rem 1rem;
-  }
-
-  .contact-section header {
-    flex-direction: column;
-  }
-
-  .contact-section .map-container {
-    width: 100%;
   }
 
   .contact-section .card svg {

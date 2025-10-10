@@ -15,8 +15,9 @@
 }
 
 .about-container header h1 {
-  font-size: 5rem;
-  max-width: 50%;
+  font-size: var(--fs-h1);
+  max-width: 75rem;
+  text-align: center;
 }
 
 .about-container main {
@@ -85,6 +86,7 @@
   gap: 1rem;
 }
 .about-container main .feature div h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
   margin: 0;
 }
 
@@ -174,16 +176,17 @@
 }
 
 @media (max-width: 500px) {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
   .about-section {
-    padding: 4rem 1rem;
-  }
-  .container {
-    padding-inline: 0;
-  }
-  .about-container header h1 {
-    font-size: 4rem;
-    max-width: unset;
-    text-align: center;
+    padding: 4rem 2rem;
   }
 
   .about-container main {
@@ -240,4 +243,16 @@
     left: 2%;
     bottom: 0%;
   }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 600px) {
+}
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 360px) {
 }
