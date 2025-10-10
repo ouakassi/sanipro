@@ -13,11 +13,10 @@ import CountUp from "../animations/CountUp";
 
 const services = [
   "Plomberie",
-  "Réparation de Fuites",
+  "Fuites",
   "Chauffe-eau",
   "Carrelage",
-  // "Salle de Bain clé en main",
-  "Salle de Bain",
+  "Bains",
   "Parquet",
   "Peinture",
   "Rénovation",
@@ -35,18 +34,18 @@ const listVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.25, // 👈 delay between each <li>
+      staggerChildren: 0.1, // 👈 delay between each <li>
     },
   },
 };
 
 // child animation
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 100 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.4, ease: "easeOut" },
   },
 };
 
@@ -54,13 +53,18 @@ export default function HeroSection() {
   return (
     <section id="accueil" className="hero-section">
       <div className="container hero-container">
-        <div className="content">
-          <h2>
+        <motion.div
+          variants={listVariants}
+          initial="hidden"
+          whileInView="visible"
+          className="content"
+        >
+          <motion.h2 variants={itemVariants}>
             <FaClock />
             Disponibilité 24h/24 et 7j/7
-          </h2>
+          </motion.h2>
           {/* <h1>Plomberie & Rénovation </h1> */}
-          <h1>
+          <motion.h1 variants={itemVariants}>
             Votre Expert de Confiance en{" "}
             <RotatingText
               texts={services}
@@ -73,7 +77,7 @@ export default function HeroSection() {
               transition={{ type: "spring", damping: 30, stiffness: 400 }}
               rotationInterval={2000}
             />
-          </h1>
+          </motion.h1>
 
           {/* <p>
             Nous intervenons 24h/24 et 7j/7 pour vos urgences de plomberie et
@@ -82,13 +86,7 @@ export default function HeroSection() {
             main — nous vous offrons des solutions rapides, durables et de
             qualité.
           </p> */}
-          <motion.ul
-            variants={listVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            style={{ listStyle: "none", padding: 0, margin: 0 }}
-          >
+          <ul>
             {list.map((text, i) => (
               <motion.li key={i} variants={itemVariants}>
                 <motion.span
@@ -101,17 +99,22 @@ export default function HeroSection() {
                 {text}
               </motion.li>
             ))}
-          </motion.ul>
-          <div className="call-to-action-btns">
+          </ul>
+          <motion.div variants={itemVariants} className="call-to-action-btns">
             <Button
               icon={<HiMiniDocumentCurrencyEuro />}
               text="devis gratuit"
             />
             <Button icon={<BsFillTelephoneFill />} text="Nous contacter" />
-          </div>
-        </div>
-        <div className="hero-image-container">
-          <div>
+          </motion.div>
+        </motion.div>
+        <motion.div className="hero-image-container">
+          <motion.div
+            initial={{ clipPath: "circle(0% at 50% 0%)" }}
+            animate={{ clipPath: "circle(100% at 50% 50%)" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            // variants={itemVariants}
+          >
             <span></span>
             <Image
               alt="worker"
@@ -119,8 +122,8 @@ export default function HeroSection() {
               width="1200"
               height="900"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

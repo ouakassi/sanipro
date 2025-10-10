@@ -72,32 +72,6 @@ footer {
   position: relative;
 }
 
-.social-media a::before {
-  content: attr(data-label);
-  position: absolute;
-
-  top: -10%;
-  /* margin: auto; */
-  background-color: black;
-  width: fit-content;
-  color: white;
-  font-size: 1.6rem;
-  padding: 4px 8px;
-  border-radius: 10px;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  pointer-events: none;
-  text-transform: capitalize;
-}
-
-/* Show tooltip on hover */
-.social-media a:hover::before {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .social-media a {
   padding: 1rem;
 }
@@ -241,6 +215,12 @@ footer {
   .bottom-footer {
     flex-direction: column-reverse;
     align-items: center;
+    gap: 2rem;
+  }
+
+  .bottom-footer p {
+    color: #8f8f8f;
+    text-align: center;
   }
 }
 
@@ -286,11 +266,9 @@ footer {
     margin-left: 0;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
-  .bottom-footer p {
-    color: #8f8f8f;
-  }
   .top-footer .footer-logo {
     font-size: 4rem;
   }
