@@ -22,15 +22,13 @@
 .mini-services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(38rem, 100%), 1fr));
-  /* grid-template-rows: repeat(2, 1fr); */
   justify-items: center;
-
   flex-wrap: wrap;
   gap: 4rem;
-
-  padding: 1rem;
+  padding: 2rem 1rem 10rem 1rem;
   width: 100%;
   max-width: 1400px;
+  z-index: 1;
 }
 
 .services-section header h3 {
@@ -357,6 +355,17 @@
   background-color: red;
 }
 
+.services-wave {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  fill: white;
+  filter: drop-shadow(0px 0px 4px white);
+}
+
 @media (max-width: 1440px) {
 }
 
@@ -364,6 +373,9 @@
 }
 
 @media (max-width: 1024px) {
+  .services-wave {
+    bottom: calc(-1px + 0%);
+  }
 }
 
 @media (max-width: 768px) {
@@ -388,6 +400,10 @@
 
   .slider-section .service .content p {
     font-size: 1.6rem;
+  }
+
+  .services-wave {
+    display: none;
   }
 }
 
