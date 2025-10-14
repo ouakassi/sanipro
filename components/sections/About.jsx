@@ -87,7 +87,7 @@ export default function About() {
         <main>
           <div className="images">
             {images.map((src, index) => (
-              <img src={src} alt={"image" + "1"} />
+              <img key={src} src={src} alt={"image" + "1"} />
             ))}
           </div>
           <div className="features">

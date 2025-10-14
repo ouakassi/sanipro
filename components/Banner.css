@@ -3,8 +3,6 @@
   position: relative;
   background: radial-gradient(50% 50%, rgb(10 44 96) 0%, rgb(6 51 118) 100%),
     url(/banner/back.avif);
-  background: radial-gradient(50% 50%, rgb(10 44 96) 0%, rgb(6 51 118) 100%),
-    url(/banner/back.avif);
   background-blend-mode: color-burn;
   width: clamp(40rem, 100%, 100rem);
   margin: auto;
@@ -17,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border-radius: 67px; */
+
   padding: 0px;
 }
 
@@ -79,16 +77,9 @@
   right: 0;
 }
 .banner .three {
-  /* left: 0; */
   right: 0;
   top: 0;
   transform: rotate(180deg);
-}
-
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 1200px) {
 }
 
 @media (max-width: 1024px) {
@@ -116,9 +107,6 @@
   .banner .icon {
     display: none;
   }
-}
-
-@media (max-width: 768px) {
 }
 
 @media (max-width: 600px) {

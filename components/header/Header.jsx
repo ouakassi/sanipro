@@ -8,7 +8,7 @@ import Button from "../buttons/Button";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Logo from "../logo/Logo";
-import { CONTACT_INFO, PAGE_LINKS } from "@/data/data";
+import { CONTACT_INFO, PAGE_LINKS, SOCIAL_LINKS } from "@/data/data";
 import { PiListDashesBold } from "react-icons/pi";
 import { RiCloseLargeLine } from "react-icons/ri";
 
@@ -65,11 +65,13 @@ export default function Header() {
             />
           ))}
         </NavList>
-        <Button
-          icon={<FaPhoneAlt />}
-          // text={"appelez-nous " + CONTACT_INFO.TELE}
-          text={CONTACT_INFO.TELE}
-        />
+        <Link target="_blank" href={SOCIAL_LINKS.WHATSAPP}>
+          <Button
+            icon={<FaPhoneAlt />}
+            // text={"appelez-nous " + CONTACT_INFO.TELE}
+            text={CONTACT_INFO.TELE}
+          />
+        </Link>
       </motion.nav>
       <motion.button
         initial={{ opacity: 0, y: -30 }}

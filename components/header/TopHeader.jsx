@@ -14,7 +14,7 @@ import { CONTACT_INFO } from "@/data/data";
 
 export default function TopHeader() {
   return (
-    <header className="top-header">
+    <header id="home" className="top-header">
       <nav className="container top-header-navbar">
         <div>
           <div className="working-hours desktop-only">

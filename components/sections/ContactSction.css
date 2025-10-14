@@ -24,7 +24,6 @@
   font-size: 1.8rem;
   color: var(--text-color);
   max-width: 60rem;
-  /* text-align: center; */
   margin-bottom: 2rem;
 }
 
@@ -56,18 +55,12 @@
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
-  /* flex: 1 1; */
-  /* cursor: pointer; */
-  /* min-width: 40rem; */
-  /* background: linear-gradient(to bottom, #ffffff, #dfdfdf); */
 }
 
 .contact-section .card .icon-container {
   background-color: #ffe7db;
   padding: 2rem;
   border-radius: 50%;
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
 }
 .contact-section .card svg {
   font-size: 4rem;
@@ -87,12 +80,6 @@
   min-width: 100%;
 }
 
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 1200px) {
-}
-
 @media (max-width: 1024px) {
   .contact-section header {
     gap: 4rem;
@@ -105,9 +92,6 @@
   }
 }
 
-@media (max-width: 600px) {
-}
-
 @media (max-width: 480px) {
   .contact-section {
     padding: 6rem 1rem;
@@ -116,7 +100,4 @@
   .contact-section .card svg {
     font-size: 3rem;
   }
-}
-
-@media (max-width: 360px) {
 }

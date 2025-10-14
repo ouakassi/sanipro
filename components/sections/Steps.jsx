@@ -55,7 +55,7 @@ export const processSteps = [
       "Option de réparation immédiate",
     ],
     icon: "/steps/plumber-coming.png",
-    image: "/steps/steps-2.png",
+    image: "/steps/steps-2.jpg",
     cta: { label: "Valider le diagnostic", href: "#devis" },
   },
   {
@@ -71,7 +71,7 @@ export const processSteps = [
       "Solutions durables et garanties",
     ],
     icon: "/steps/fixing.png",
-    image: "/steps/steps-3.png",
+    image: "/steps/steps-3.jpg",
     cta: { label: "Lancer l’intervention", href: "#contact" },
   },
   {
@@ -87,7 +87,7 @@ export const processSteps = [
       "Suivi client et disponibilité après intervention",
     ],
     icon: "/steps/satisfied.png",
-    image: "/steps/steps-4.png",
+    image: "/steps/steps-4.jpg",
     cta: { label: "Demander la facture", href: "#facture" },
   },
 ];

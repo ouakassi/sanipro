@@ -39,7 +39,6 @@
   width: 100%;
   gap: 2rem;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .review-card {
@@ -55,7 +54,6 @@
 
 .review-card .stars {
   display: flex;
-  color: var(--main-color);
   color: #ffdc21;
 }
 

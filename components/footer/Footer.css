@@ -1,19 +1,13 @@
 footer {
-  background-color: #0a0a0a;
   background-color: #000b15;
-  padding: 4rem 2rem 1rem 2rem;
   padding: 25rem 2rem 1rem 2rem;
 }
 .footer {
-  /* background: url("/footer-background.png") no-repeat center center; */
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   background-size: cover;
   width: 100%;
   gap: 2rem;
-  /* height: 100%; */
 }
 .footer p {
   color: #d1d1d1;
@@ -30,12 +24,9 @@ footer {
 
 .top-footer .content {
   max-width: 1200px;
-  /* margin: 0 auto; */
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  /* align-items: center; */
-  /* text-align: center; */
 }
 .top-footer .footer-logo {
   font-size: 6rem;
@@ -88,9 +79,6 @@ footer {
   padding: 0;
   display: flex;
   flex-direction: column;
-  /* gap: 2rem; */
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
 }
 .links h4 {
   margin-bottom: 2rem;
@@ -116,8 +104,7 @@ footer {
 }
 .bottom-footer {
   display: flex;
-  /* color: #e0e0e0; */
-  /* text-align: center; */
+
   padding: 1rem;
   font-size: 1.6rem;
   position: relative;
@@ -127,8 +114,7 @@ footer {
 .bottom-footer::before {
   content: "";
   background: linear-gradient(to right, transparent, #ff660065, transparent);
-  /* margin-right: 1rem; */
-  /* align-self: center; */
+
   position: absolute;
   width: 100%;
   height: 1px;
@@ -148,7 +134,6 @@ footer {
   list-style: none;
   display: flex;
   gap: 2rem;
-  /* margin-left: auto; */
 }
 .links .info {
   display: flex;
@@ -163,40 +148,6 @@ footer {
 .links .info li svg {
   color: var(--second-color);
   font-size: 2rem;
-}
-/* @media (max-width: 600px) {
-  .top-footer .content {
-    padding: 0 10px;
-  }
-  .top-footer p {
-    font-size: 14px;
-  }
-  .top-footer .links {
-    gap: 10px;
-  }
-}
-.footer-logo {
-  width: 150px; 
-  height: auto;
-}
-.footer-logo img {
-  width: 100%;
-  height: auto;
-}
-.footer-logo .logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  margin-left: 10px;
-}
-.footer-logo .logo-text span {
-  color: #ff6600; 
-} */
-
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 1200px) {
 }
 
 @media (max-width: 1024px) {
@@ -230,9 +181,6 @@ footer {
     flex-direction: column;
     gap: 2rem;
   }
-}
-
-@media (max-width: 600px) {
 }
 
 @media (max-width: 480px) {

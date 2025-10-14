@@ -38,7 +38,7 @@ const services = [
     title: "Plomberie",
     paragraph:
       "Notre équipe de plombiers qualifiés intervient rapidement pour tous vos problèmes de robinetterie, canalisations bouchées et installations sanitaires. Nous garantissons des réparations durables et des installations aux normes avec un service disponible 7j/7 pour les urgences.",
-    image: "/services/plomberie.png", // replace with your actual path
+    image: "/services/plomberie.jpg", // replace with your actual path
     icon: "/services/plomberie-icon.png", // replace with your actual path
   },
   {
@@ -52,42 +52,42 @@ const services = [
     title: "Chauffe-eau ",
     paragraph:
       "Spécialistes en chauffage et production d'eau chaude, nous installons et remplaçons tous types d'équipements : chaudières gaz, chauffe-eau électriques et thermodynamiques. Installation sécurisée avec mise en service complète incluse.",
-    image: "/services/chauffe-eau.png",
+    image: "/services/chauffe-eau.jpg",
     icon: "/services/chauffe-eau-icon.png",
   },
   {
     title: "Carrelage",
     paragraph:
       "Pose professionnelle de carrelage pour sols et murs avec finitions impeccables. Nous travaillons tous matériaux : faïence, grès cérame, pierre naturelle. Préparation soignée des supports et étanchéité garantie dans les pièces humides.",
-    image: "/services/carrelage.png",
+    image: "/services/carrelage.jpg",
     icon: "/services/carrelage-icon.png",
   },
   {
     title: "Salle de bain ",
     paragraph:
       "Rénovation complète de votre salle de bain de la conception à la finition. Notre service inclut la plomberie, l'électricité, le carrelage, la menuiserie et tous les équipements sanitaires pour un résultat harmonieux et fonctionnel.",
-    image: "/services/salle-de-bain.png",
+    image: "/services/salle-de-bain.jpg",
     icon: "/services/salle-de-bain-icon.png",
   },
   {
     title: "Parquet",
     paragraph:
       "Installation et rénovation de parquets massifs, contrecollés et stratifiés. Ponçage, vitrification et pose avec finitions soignées pour sublimer vos sols. Conseils personnalisés sur les essences et finitions adaptées à votre intérieur.",
-    image: "/services/parquet.png",
+    image: "/services/parquet.jpg",
     icon: "/services/parquet-icon.png",
   },
   {
     title: "Peinture",
     paragraph:
       "Travaux de peinture intérieure et extérieure avec préparation minutieuse des supports. Application de peintures de qualité pour un rendu durable et esthétique. Choix des teintes et finitions selon vos goûts et l'usage des pièces.",
-    image: "/services/peinture.png",
+    image: "/services/peinture.jpg",
     icon: "/services/peinture-icon.png",
   },
   {
     title: "Rénovation globale",
     paragraph:
       "Transformation complète de votre habitat avec coordination de tous les corps de métier. De la conception à la livraison, nous gérons votre projet dans son intégralité pour vous offrir un intérieur moderne et fonctionnel selon vos attentes.",
-    image: "/services/renovation.png",
+    image: "/services/renovation.jpg",
     icon: "/services/renovation-icon.png",
   },
   // {
@@ -103,56 +103,48 @@ const miniservices = [
     title: "Plomberie",
     paragraph:
       "Intervention rapide pour robinetterie, canalisations bouchées et installations sanitaires. Service d'urgence 7j/7.",
-    image: "/services/plomberie.png",
-    icon: "/services/plomberie-icon.png",
+    icon: "/services/plomberie-icon.jpg",
   },
   {
     title: "Fuites",
     paragraph:
       "Détection et réparation efficace de toutes fuites grâce à nos équipements modernes. Intervention rapide garantie.",
-    image: "/services/fuites.png",
     icon: "/services/fuites-icon.png",
   },
   {
     title: "Chauffage",
     paragraph:
       "Installation et remplacement de chaudières gaz, chauffe-eau électriques et thermodynamiques. Installation sécurisée.",
-    image: "/services/chauffe-eau.png",
     icon: "/services/chauffe-eau-icon.png",
   },
   {
     title: "Carrelage",
     paragraph:
       "Pose professionnelle de carrelage sols et murs. Tous matériaux : faïence, grès cérame, pierre naturelle.",
-    image: "/services/carrelage.png",
     icon: "/services/carrelage-icon.png",
   },
   {
     title: "Bains",
     paragraph:
       "Rénovation complète : plomberie, électricité, carrelage, menuiserie. Résultat harmonieux et fonctionnel.",
-    image: "/services/salle-de-bain.png",
     icon: "/services/salle-de-bain-icon.png",
   },
   {
     title: "Parquet",
     paragraph:
       "Installation et rénovation de parquets massifs, contrecollés et stratifiés. Ponçage et vitrification inclus.",
-    image: "/services/parquet.png",
     icon: "/services/parquet-icon.png",
   },
   {
     title: "Peinture",
     paragraph:
       "Peinture intérieure et extérieure avec préparation minutieuse. Application de peintures de qualité.",
-    image: "/services/peinture.png",
     icon: "/services/peinture-icon.png",
   },
   {
     title: "Rénovation",
     paragraph:
       "Transformation complète avec coordination de tous les corps de métier. Gestion de projet intégrale.",
-    image: "/services/renovation.png",
     icon: "/services/renovation-icon.png",
   },
   {
@@ -160,7 +152,6 @@ const miniservices = [
     paragraph: (
       <Button text={CONTACT_INFO.TELE} className="call-btn" icon={<IoCall />} />
     ),
-    image: "/services/renovation.png",
     icon: "/services/contact.png",
   },
 ];
@@ -172,7 +163,7 @@ export default function ServicesSection() {
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     // container: headerRef,
-    offset: ["start end", "center center"],
+    offset: ["start end", "start center"],
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
@@ -188,7 +179,7 @@ export default function ServicesSection() {
   return (
     <motion.section
       style={{
-        scale,
+        // scale,
         // opacity,
 
         borderRadius,
@@ -339,7 +330,7 @@ export default function ServicesSection() {
         initial={{ y: " 30px" }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        class="services-wave "
+        className="services-wave "
       >
         <svg
           data-name="Layer 1"
@@ -349,7 +340,7 @@ export default function ServicesSection() {
         >
           <path
             d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            class="shape-fill"
+            className="shape-fill"
           ></path>
         </svg>
       </motion.div>

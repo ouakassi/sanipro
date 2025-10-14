@@ -9,7 +9,7 @@ export default function AnimatedText({
   blur = true,
 }) {
   return (
-    <div className={className}>
+    <span className={className}>
       {text.split("").map((char, i) => {
         return (
           <motion.span
@@ -31,6 +31,6 @@ export default function AnimatedText({
           </motion.span>
         );
       })}
-    </div>
+    </span>
   );
 }

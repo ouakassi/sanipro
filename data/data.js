@@ -14,7 +14,7 @@ const SOCIAL_LINKS = {
 };
 
 const PAGE_LINKS = [
-  { label: "Accueil", href: "#" },
+  { label: "Accueil", href: "#home" },
   { label: "À Propos", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Projets", href: "#projects" },

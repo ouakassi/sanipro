@@ -1,12 +1,5 @@
 .hero-section {
-  background: linear-gradient(180deg, #fff9f5, #9e592e00);
-  /* background: linear-gradient(180deg, #ffeeeb, #9e592e00); */
-  padding: calc(var(--header-height) + 1rem) 2rem 4rem 2rem;
-}
-
-.hero-section {
   background: linear-gradient(184deg, #ffffff, #ffffffeb), url(/back.jpg);
-  /* background: linear-gradient(180deg, #ffeeeb, #9e592e00); */
   padding: calc(var(--header-height) + 1rem) 2rem 4rem 2rem;
   background-attachment: fixed;
 }
@@ -15,15 +8,9 @@
   display: flex;
   padding: 4rem 1rem;
   gap: 2rem;
-  /* margin-top: 1rem; */
   border-radius: 10px;
   align-items: center;
   width: 100%;
-  /* justify-content: space-between; */
-  /* background: linear-gradient(200deg, var(--main-color), #ce5f1f); */
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
-  /* background-position: 28% 44%; */
 }
 
 .hero-container .content {
@@ -67,7 +54,6 @@
   align-items: center;
   gap: 0.6rem;
   color: #098f3e;
-  /* margin-top: -2rem; */
   font-family: var(--font-mono);
   font-size: 1.4rem;
   background: #d7ffee;
@@ -91,15 +77,10 @@
   color: var(--main-color);
 }
 .hero-container .content button {
-  /* background-color: var(--main-color); */
-  /* border: 1px solid #ffb083; */
-  /* color: white; */
-  /* padding: 1.2rem 2rem; */
   border-radius: 10px;
   box-shadow: rgba(255, 136, 24, 0.25) inset 0px 13px 27px -5px,
     rgba(252, 252, 252, 0.5) inset 0px 8px 16px -8px;
   transition: 0.2s all;
-  /* font-size: 1.8rem; */
 }
 .hero-container .content button:hover {
   filter: brightness(1.2);
@@ -124,8 +105,6 @@
 
 .hero-container .hero-image-container img {
   position: relative;
-  /* width: 50rem; */
-  /* height: 50rem; */
   border-radius: 50%;
 }
 
@@ -146,15 +125,6 @@
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 1200px) {
-}
-
-@media (max-width: 1024px) {
-}
-
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
@@ -169,16 +139,4 @@
   .hero-section {
     padding: 2rem;
   }
-
-  /* .hero-container .content h1,
-  .header-container {
-    font-size: 4.5rem;
-  } */
-}
-
-@media (max-width: 360px) {
-  /* .hero-container .content h1,
-  .header-container {
-    font-size: 4rem;
-  } */
 }
