@@ -88,10 +88,11 @@
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.1);
   aspect-ratio: 1/1;
+  transition: 0.2s all;
 }
 
 .mini-services-container .service:hover {
-  background: #063170;
+  /* background: #063170; */
   border: 1px solid #ff7125a3;
 }
 

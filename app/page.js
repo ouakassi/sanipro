@@ -10,6 +10,7 @@ import TimelineSection from "@/components/sections/TimelineSection";
 import CallUsSection from "@/components/sections/CallUsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSction from "@/components/sections/ContactSction";
+import Reviews from "@/components/sections/ReviewsSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ServicesSection />
       <Steps />
       <ProjectsSection />
+      <Reviews />
       <CallUsSection />
       <ContactSction />
       <Banner />

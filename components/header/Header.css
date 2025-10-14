@@ -40,3 +40,56 @@ nav a:hover,
 nav a:focus {
   color: var(--main-color);
 }
+
+.toggle-btn {
+  display: none;
+}
+
+@media (width < 900px) {
+  .header {
+  }
+
+  .header nav {
+    flex-direction: column;
+    gap: 2rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /* left: 100vw; */
+    height: calc(100vh - 4rem);
+    /* width: 100vw; */
+    padding: 2rem;
+    /* align-items: center; */
+    justify-content: space-around;
+    margin-top: 2rem;
+    border-radius: 0px 40px 40px 0;
+    /* justify-content: baseline; */
+    /* align-items: baseline; */
+  }
+  .header nav ul {
+    flex-direction: column;
+    gap: 3rem;
+    /* justify-content: baseline; */
+    /* align-items: baseline; */
+    width: 100%;
+    margin-left: 1rem;
+  }
+
+  .toggle-btn {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem 2rem;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 50%;
+    box-shadow: rgb(0, 0, 0) 0px 10px 30px -10px;
+  }
+
+  .toggle-btn svg {
+    font-size: 3rem;
+  }
+}

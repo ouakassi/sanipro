@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
         className={`${dmSans.variable} ${robotoMono.variable} ${montserrat.variable} ${plusJakarta.variable} ${bricolage.variable} ${figtree.variable}`}
       >
         <TopHeader />
-        {/* <Header /> */}
+        <Header />
         {children}
         <Footer />
       </body>

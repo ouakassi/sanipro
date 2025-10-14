@@ -23,6 +23,7 @@ import AnimatedText from "../animations/AnimatedText";
 import Button from "../buttons/Button";
 import { FaPhoneAlt } from "react-icons/fa";
 import MiniLogo from "../logo/MiniLogo";
+import { CONTACT_INFO } from "@/data/data";
 
 export const processSteps = [
   {
@@ -131,22 +132,6 @@ export const reassuranceBlocks = [
   },
 ];
 
-export const processCtas = [
-  {
-    id: "call",
-    label: "Appeler maintenant",
-    href: "tel:+33611423116",
-    primary: true,
-  },
-  { id: "quote", label: "Demander un devis", href: "#devis", primary: false },
-  {
-    id: "tips",
-    label: "Urgence fuite ? Conseils",
-    href: "#conseils",
-    primary: false,
-  },
-];
-
 const backgrounds = {
   1: "gray",
   2: "bleu",
@@ -184,6 +169,7 @@ export default function Steps() {
     <motion.section
       // style={{ background: background }}
       className="steps-section"
+      id="steps"
       ref={ref}
     >
       <div className="container steps">

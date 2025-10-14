@@ -1,6 +1,6 @@
 .call-us-section {
   padding: 6rem 0;
-  background: #ffeee9;
+  background: #fff9f6;
 }
 
 .call-us-container {
@@ -47,6 +47,16 @@
 }
 .call-us-container .content button {
   align-self: flex-start;
+}
+
+.custom-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  fill: #ffeee9;
 }
 
 @media (max-width: 1440px) {

@@ -4,7 +4,7 @@
   background-blend-mode: darken;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; /* try cover instead of contain for better blending */
+  background-size: cover;
 }
 
 .projects-container {

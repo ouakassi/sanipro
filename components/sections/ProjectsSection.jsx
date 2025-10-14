@@ -9,7 +9,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
-import { useScroll, useTransform, motion } from "motion/react";
+import { useScroll, useTransform, motion, useInView } from "motion/react";
 import AnimatedText from "../animations/AnimatedText";
 import Carousel from "../Carousel";
 import MiniLogo from "../logo/MiniLogo";
@@ -79,6 +79,20 @@ export default function ProjectsSection() {
     offset: ["end start", "end end"],
   });
 
+  // const isHeaderInView = useInView(sectionRef);
+
+  // useEffect(() => {
+  //   if (isHeaderInView) {
+  //     document.body.style.background = "black";
+  //   } else {
+  //     document.body.style.background = "white";
+  //   }
+
+  //   return () => {
+  //     document.body.style.background = "";
+  //   };
+  // }, [isHeaderInView]);
+
   // Animate background color from white → light gray → black
   const background = useTransform(
     scrollYProgress,
@@ -97,6 +111,7 @@ export default function ProjectsSection() {
         borderRadius,
       }}
       className="projects-section"
+      id="projects"
     >
       <div className="container projects-container">
         <motion.header

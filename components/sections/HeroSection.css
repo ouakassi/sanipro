@@ -4,6 +4,13 @@
   padding: calc(var(--header-height) + 1rem) 2rem 4rem 2rem;
 }
 
+.hero-section {
+  background: linear-gradient(184deg, #ffffff, #ffffffeb), url(/back.jpg);
+  /* background: linear-gradient(180deg, #ffeeeb, #9e592e00); */
+  padding: calc(var(--header-height) + 1rem) 2rem 4rem 2rem;
+  background-attachment: fixed;
+}
+
 .hero-container {
   display: flex;
   padding: 4rem 1rem;

@@ -10,6 +10,8 @@ import { FaClock } from "react-icons/fa";
 import RotatingText from "../animations/RotatingText";
 import { motion, AnimatePresence } from "motion/react";
 import CountUp from "../animations/CountUp";
+import Link from "next/link";
+import { SOCIAL_LINKS } from "@/data/data";
 
 const services = [
   "Plomberie",
@@ -51,7 +53,7 @@ const itemVariants = {
 
 export default function HeroSection() {
   return (
-    <section id="accueil" className="hero-section">
+    <section id="hero" className="hero-section">
       <div className="container hero-container">
         <motion.div
           variants={listVariants}
@@ -101,11 +103,15 @@ export default function HeroSection() {
             ))}
           </ul>
           <motion.div variants={itemVariants} className="call-to-action-btns">
-            <Button
-              icon={<HiMiniDocumentCurrencyEuro />}
-              text="devis gratuit"
-            />
-            <Button icon={<BsFillTelephoneFill />} text="Nous contacter" />
+            <Link href="#contact">
+              <Button
+                icon={<HiMiniDocumentCurrencyEuro />}
+                text="devis gratuit"
+              />
+            </Link>
+            <Link target="_blank" href={SOCIAL_LINKS.WHATSAPP}>
+              <Button icon={<BsFillTelephoneFill />} text="Nous contacter" />
+            </Link>
           </motion.div>
         </motion.div>
         <motion.div className="hero-image-container">

@@ -8,19 +8,14 @@ import Button from "../buttons/Button";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Logo from "../logo/Logo";
-
-const navLinks = [
-  { title: "accueil", link: "accueil" },
-  { title: "à propos", link: "a-propos" },
-  { title: "services", link: "services" },
-  { title: "projets", link: "projets" },
-  { title: "avis clients", link: "avis" },
-  { title: "contact", link: "contact" },
-];
+import { CONTACT_INFO, PAGE_LINKS } from "@/data/data";
+import { PiListDashesBold } from "react-icons/pi";
+import { RiCloseLargeLine } from "react-icons/ri";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [toggleSiedbar, setToggleSidebar] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,36 +34,69 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const handleToggleSidebar = () => setToggleSidebar(!toggleSiedbar);
+
   return (
     <motion.header
       layout
-      className=" header"
+      className="header"
       style={
         !isVisible
           ? { top: 10 }
           : { top: "calc(var(--top-header-height) + 1rem )" }
       }
     >
-      <nav className="container">
+      <motion.nav
+        layout
+        className="container"
+        style={{ left: !toggleSiedbar ? "-100%" : "0%" }}
+      >
         <Link href={"/"} className="logo-link">
           <Logo />
         </Link>
 
         <NavList>
-          {navLinks.map(({ title, link }) => (
-            <NavItem key={title} title={title} link={link} />
+          {PAGE_LINKS.map(({ label, href }) => (
+            <NavItem
+              key={label}
+              title={label}
+              link={href}
+              onClick={handleToggleSidebar}
+            />
           ))}
         </NavList>
-        <Button icon={<FaPhoneAlt />} text={"appelez-nous  +33 611 231 314"} />
-      </nav>
+        <Button
+          icon={<FaPhoneAlt />}
+          // text={"appelez-nous " + CONTACT_INFO.TELE}
+          text={CONTACT_INFO.TELE}
+        />
+      </motion.nav>
+      <motion.button
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={handleToggleSidebar}
+        className="btn-reset toggle-btn"
+        style={{ background: toggleSiedbar ? "red" : null }}
+      >
+        <motion.span
+          initial={{ opacity: 0, y: -30, scale: 0 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          key={toggleSiedbar}
+        >
+          {!toggleSiedbar ? <PiListDashesBold /> : <RiCloseLargeLine />}
+        </motion.span>
+      </motion.button>
     </motion.header>
   );
 }
 
 const NavList = ({ children }) => <ul>{children}</ul>;
 
-const NavItem = ({ title, link }) => (
+const NavItem = ({ title, link, onClick }) => (
   <li>
-    <Link href={"#" + link}>{title}</Link>
+    <Link onClick={onClick} href={link}>
+      {title}
+    </Link>
   </li>
 );

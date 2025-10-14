@@ -37,7 +37,7 @@
   --top-header-height: 4rem;
   --header-height: 7rem;
 
-  --fs-h1: clamp(4rem, 5vw, 6rem);
+  --fs-h1: clamp(3rem, 5vw, 6rem);
 
   --xl: 1440px;
   --lg: 1200px;

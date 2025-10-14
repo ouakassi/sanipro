@@ -31,6 +31,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+import { CONTACT_INFO } from "@/data/data";
 
 const services = [
   {
@@ -157,7 +158,7 @@ const miniservices = [
   {
     title: "contactez-nous",
     paragraph: (
-      <Button text="+33 611 231 314" className="call-btn" icon={<IoCall />} />
+      <Button text={CONTACT_INFO.TELE} className="call-btn" icon={<IoCall />} />
     ),
     image: "/services/renovation.png",
     icon: "/services/contact.png",
@@ -171,7 +172,7 @@ export default function ServicesSection() {
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     // container: headerRef,
-    offset: ["start end", "start center"],
+    offset: ["start end", "center center"],
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
@@ -284,10 +285,6 @@ export default function ServicesSection() {
                 stiffness: 400,
                 mass: 1,
                 delay: 0.2,
-              }}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2 },
               }}
             >
               <img src={icon} alt="" />

@@ -2,9 +2,9 @@
 
 import "./Button.css";
 
-export default function Button({ icon, text, className }) {
+export default function Button({ icon, text, className = "", ...rest }) {
   return (
-    <button className={`cssbuttons-io-button ${className}`}>
+    <button {...rest} className={`cssbuttons-io-button ${className}`}>
       {icon}
       <span>{text}</span>
     </button>

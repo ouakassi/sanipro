@@ -10,6 +10,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import socialData from "@/data/socialData";
+import { CONTACT_INFO } from "@/data/data";
 
 export default function TopHeader() {
   return (
@@ -20,10 +21,10 @@ export default function TopHeader() {
             <FaClock /> Horaires : 24h/24 7j/7
           </div>
           <div className="email">
-            <FaEnvelope /> sanipro@gmail.com
+            <FaEnvelope /> {CONTACT_INFO.EMAIL}
           </div>
           <div className="phone">
-            <FaPhone /> +33 611 231 314
+            <FaPhone /> {CONTACT_INFO.TELE}
           </div>
         </div>
         <div className="socials desktop-only">

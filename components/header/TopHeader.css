@@ -6,10 +6,10 @@
 .top-header-navbar {
   height: var(--top-header-height);
   display: flex;
-  /* background-color: red; */
   padding: 0 3rem;
-  justify-content: space-between;
+  justify-content: center;
   color: white;
+  gap: 4rem;
 }
 
 .top-header-navbar > div:first-child {
