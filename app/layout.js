@@ -49,41 +49,79 @@ const figtree = Figtree({
 });
 
 export const metadata = {
-  title: "Sanipro | Services de plomberie et sanitaires professionnels",
+  title: "Sanipro | Plomberie, Chauffage et Rénovation 24h/24 en France",
   description:
-    "Sanipro, votre expert en plomberie, carrelage et installations sanitaires. Interventions rapides, solutions durables et design moderne pour votre confort.",
-  keywords:
-    "plomberie, sanitaires, carrelage, installation, réparation, dépannage, plomberie Maroc, plomberie Beni Mellal, Sanipro",
-  authors: [{ name: "Sanipro" }],
+    "Sanipro, votre expert en plomberie, chauffage et rénovation partout en France. Intervention rapide 24h/24 et 7j/7. Contactez-nous au 06 81 18 05 25.",
+  keywords: [
+    "plombier France",
+    "chauffagiste France",
+    "rénovation salle de bain",
+    "carrelage professionnel",
+    "urgence plomberie",
+    "Sanipro",
+    "plomberie 24h/24",
+    "entretien chauffe-eau",
+    "installation sanitaire",
+  ],
+  authors: [{ name: "Sanipro SARL" }],
   openGraph: {
-    title: "Sanipro | Expert en plomberie et sanitaires",
+    title: "Sanipro | Experts en Plomberie & Rénovation 24h/24",
     description:
-      "Découvrez Sanipro, spécialiste des installations sanitaires et des travaux de plomberie. Qualité, fiabilité et satisfaction client.",
-    url: "https://saniprosarl.com",
+      "Sanipro propose des services professionnels de plomberie, chauffage et rénovation dans toute la France. Intervention rapide et fiable, 7j/7.",
+    url: "https://www.saniprosarl.com",
     siteName: "Sanipro",
     images: [
       {
-        url: "/hero/hero.png",
+        url: "https://www.saniprosarl.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Sanipro - plomberie et sanitaires",
+        alt: "Sanipro - Services de plomberie et rénovation en France",
       },
     ],
     locale: "fr_FR",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Sanipro | Expert en plomberie et sanitaires",
-    description:
-      "Services professionnels de plomberie, carrelage et sanitaires. Sanipro, votre partenaire confiance.",
-    images: ["/images/sanipro-preview.jpg"],
+  alternates: {
+    canonical: "https://www.saniprosarl.com",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Plumber",
+              name: "Sanipro",
+              image: "https://www.saniprosarl.com/og-image.jpg",
+              url: "https://www.saniprosarl.com",
+              telephone: "+33681180525",
+              email: "sanipro21000@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "24 Av. de Stalingrad",
+                addressLocality: "France",
+                postalCode: "21000",
+                addressCountry: "FR",
+              },
+              openingHours: "Mo-Su 00:00-23:59",
+              areaServed: {
+                "@type": "Country",
+                name: "France",
+              },
+              sameAs: [
+                "https://web.facebook.com/profile.php?id=61576141945211",
+                "https://www.instagram.com/saniprosarl/",
+                "https://api.whatsapp.com/send/?phone=33681180525",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${dmSans.variable} ${robotoMono.variable} ${montserrat.variable} ${plusJakarta.variable} ${bricolage.variable} ${figtree.variable}`}
       >

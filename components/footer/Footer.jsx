@@ -73,17 +73,6 @@ export default function Footer() {
             </div>
           </div>
           <div className="links-container">
-            {/* <div className="links">
-              <h4>Nos Services</h4>
-              <ul>
-                {servicesLinks.map((link, i) => (
-                  <li key={i}>
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
-
             <div className="links">
               <h4>Liens</h4>
               <ul>
@@ -105,14 +94,6 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-
-            {/* <div className="links">
-            <h4>Contact</h4>
-            <ul>
-              <li>06 52 34 56 78</li>
-              <li>12 Rue de la Paix, 75002 Paris</li>
-            </ul>
-          </div> */}
           </div>
         </div>
         <div className="bottom-footer">
