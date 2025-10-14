@@ -49,9 +49,36 @@ const figtree = Figtree({
 });
 
 export const metadata = {
-  title: "Plomberie & Rénovation 24h/24",
+  title: "Sanipro | Services de plomberie et sanitaires professionnels",
   description:
-    "Dépannage plomberie, rénovation salle de bain, carrelage, parquet et peinture.",
+    "Sanipro, votre expert en plomberie, carrelage et installations sanitaires. Interventions rapides, solutions durables et design moderne pour votre confort.",
+  keywords:
+    "plomberie, sanitaires, carrelage, installation, réparation, dépannage, plomberie Maroc, plomberie Beni Mellal, Sanipro",
+  authors: [{ name: "Sanipro" }],
+  openGraph: {
+    title: "Sanipro | Expert en plomberie et sanitaires",
+    description:
+      "Découvrez Sanipro, spécialiste des installations sanitaires et des travaux de plomberie. Qualité, fiabilité et satisfaction client.",
+    url: "https://saniprosarl.com",
+    siteName: "Sanipro",
+    images: [
+      {
+        url: "/hero/hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Sanipro - plomberie et sanitaires",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sanipro | Expert en plomberie et sanitaires",
+    description:
+      "Services professionnels de plomberie, carrelage et sanitaires. Sanipro, votre partenaire confiance.",
+    images: ["/images/sanipro-preview.jpg"],
+  },
 };
 
 export default function RootLayout({ children }) {

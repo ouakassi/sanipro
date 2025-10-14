@@ -53,20 +53,21 @@ const itemVariants = {
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="hero-section">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      id="hero"
+      className="hero-section"
+    >
       <div className="container hero-container">
-        <motion.div
-          variants={listVariants}
-          initial="hidden"
-          whileInView="visible"
-          className="content"
-        >
-          <motion.h2 variants={itemVariants}>
+        <motion.div className="content">
+          <motion.h2>
             <FaClock />
             Disponibilité 24h/24 et 7j/7
           </motion.h2>
           {/* <h1>Plomberie & Rénovation </h1> */}
-          <motion.h1 variants={itemVariants}>
+          <motion.h1>
             Votre Expert de Confiance en{" "}
             <RotatingText
               texts={services}
@@ -88,21 +89,21 @@ export default function HeroSection() {
             main — nous vous offrons des solutions rapides, durables et de
             qualité.
           </p> */}
-          <ul>
+          <motion.ul
+            variants={listVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             {list.map((text, i) => (
               <motion.li key={i} variants={itemVariants}>
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.4, delay: i * 0.25 }}
-                >
+                <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }}>
                   <BsCheckCircleFill size={20} />
                 </motion.span>
                 {text}
               </motion.li>
             ))}
-          </ul>
-          <motion.div variants={itemVariants} className="call-to-action-btns">
+          </motion.ul>
+          <motion.div className="call-to-action-btns">
             <Link href="#contact">
               <Button
                 icon={<HiMiniDocumentCurrencyEuro />}
@@ -131,6 +132,6 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -51,7 +51,7 @@ export default function Header() {
         className="container"
         style={{ left: !toggleSiedbar ? "-100%" : "0%" }}
       >
-        <Link href={"/"} className="logo-link">
+        <Link href={"#home"} className="logo-link">
           <Logo />
         </Link>
 
