@@ -1,5 +1,7 @@
+"use client";
+import { useRef } from "react";
 import "./TimelineSection.css";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 
 const services = [
   {
@@ -45,10 +47,12 @@ const services = [
 ];
 
 export default function TimelineSection() {
+  const sectionRef = useRef();
+  const isSectionInView = useInView(sectionRef);
   const timeLineDataArray = Array(10).fill(services).flat();
 
   return (
-    <section className="container timeline-section">
+    <section ref={sectionRef} className="container timeline-section">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -56,7 +60,7 @@ export default function TimelineSection() {
         className="timeline-container"
       >
         <motion.div
-          animate={{ x: ["0%", "-100%"] }}
+          animate={isSectionInView ? { x: ["0%", "-100%"] } : null}
           transition={{
             delay: 0.2,
             repeat: Infinity,
