@@ -1,18 +1,16 @@
 'use client";';
 
-import { useEffect, useRef } from "react";
 import "./ProjectsSection.css";
-
+import { useEffect, useRef } from "react";
 import { PiArrowBendDownRightBold } from "react-icons/pi";
-
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from "react-compare-slider";
 import { useScroll, useTransform, motion, useInView } from "motion/react";
 import AnimatedText from "../animations/AnimatedText";
-import Carousel from "../Carousel";
 import MiniLogo from "../logo/MiniLogo";
+import ImageReveal from "../animations/ImageReveal";
 
 const projects = [
   {
@@ -72,33 +70,12 @@ const materialItems = [
 export default function ProjectsSection() {
   const sectionRef = useRef(null);
 
-  // Track scroll progress of this section
   const { scrollYProgress } = useScroll({
     target: sectionRef,
 
     offset: ["end start", "end end"],
   });
 
-  // const isHeaderInView = useInView(sectionRef);
-
-  // useEffect(() => {
-  //   if (isHeaderInView) {
-  //     document.body.style.background = "black";
-  //   } else {
-  //     document.body.style.background = "white";
-  //   }
-
-  //   return () => {
-  //     document.body.style.background = "";
-  //   };
-  // }, [isHeaderInView]);
-
-  // Animate background color from white → light gray → black
-  const background = useTransform(
-    scrollYProgress,
-    [1, 0.4, 0],
-    ["rgb(4 32 59)", "#000000", "rgb(11 3 1)"]
-  );
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
   const borderRadius = useTransform(scrollYProgress, [0, 1], ["0px", "100px"]);
 
@@ -106,7 +83,6 @@ export default function ProjectsSection() {
     <motion.section
       transition={{ duration: 1 }}
       style={{
-        //  background,
         scale,
         borderRadius,
       }}
@@ -161,27 +137,24 @@ export default function ProjectsSection() {
               <div className="row" key={rowIndex}>
                 {row.map((project) => (
                   <div className="project-feature" key={project.id}>
-                    <ReactCompareSlider
-                      className="compare-slider"
-                      portrait={project.portrait}
-                      itemOne={
-                        <ReactCompareSliderImage
-                          src={project.before}
-                          alt="Avant"
-                        />
-                      }
-                      itemTwo={
-                        <ReactCompareSliderImage
-                          src={project.after}
-                          alt="Après"
-                        />
-                      }
-                    />
-
-                    {/* <div className="labels">
-                      <span>avant</span>
-                      <span>après</span>
-                    </div> */}
+                    <ImageReveal>
+                      <ReactCompareSlider
+                        className="compare-slider"
+                        portrait={project.portrait}
+                        itemOne={
+                          <ReactCompareSliderImage
+                            src={project.before}
+                            alt="Avant"
+                          />
+                        }
+                        itemTwo={
+                          <ReactCompareSliderImage
+                            src={project.after}
+                            alt="Après"
+                          />
+                        }
+                      />
+                    </ImageReveal>
 
                     <p className="caption">
                       <PiArrowBendDownRightBold />
@@ -211,7 +184,9 @@ export default function ProjectsSection() {
           </header>
           <div className="materias-imgs">
             {materialItems.map((item) => (
-              <img key={item.id} src={item.img} alt={item.label} />
+              <ImageReveal key={item.id}>
+                <img src={item.img} alt={item.label} />
+              </ImageReveal>
             ))}
           </div>
         </div>
@@ -225,11 +200,12 @@ export default function ProjectsSection() {
           </header>
           <div className="latest-projects-container">
             {Array.from({ length: 7 }).map((_, index) => (
-              <img
-                key={index}
-                src={`/projects/project-${index + 1}.jpeg`}
-                alt={`Project ${index + 1}`}
-              />
+              <ImageReveal key={index} withHover={true}>
+                <img
+                  src={`/projects/project-${index + 1}.jpeg`}
+                  alt={`Project ${index + 1}`}
+                />
+              </ImageReveal>
             ))}
           </div>
         </div>

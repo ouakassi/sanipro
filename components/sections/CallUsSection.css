@@ -39,7 +39,7 @@
 }
 
 .call-us-container .content h1 {
-  font-size: var(--fs-h1);
+  font-size: min(var(--fs-h1), 5rem);
   margin: 0;
 }
 .call-us-container .content p {
@@ -72,6 +72,10 @@
   .call-us-container {
     flex-direction: column;
     padding: 1rem;
+  }
+
+  .call-us-container .content h1 {
+    text-align: center;
   }
 
   .imgs-container {

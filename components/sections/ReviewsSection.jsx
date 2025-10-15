@@ -6,6 +6,11 @@ import { TbStarFilled } from "react-icons/tb";
 import { MdAddReaction } from "react-icons/md";
 
 import { IoMdAddCircleOutline } from "react-icons/io";
+import ImageReveal from "../animations/ImageReveal";
+import AnimatedText from "../animations/AnimatedText";
+import AnimatedHeader from "../animations/AnimatedHeader";
+import Link from "next/link";
+import { SOCIAL_LINKS } from "@/data/data";
 
 const reviews = [
   {
@@ -54,9 +59,10 @@ export default function ReviewsSection() {
       <div className="container reviews-container">
         <header>
           <h1>
-            La confiance de <span>nos clients </span>
-            envers
-            <MiniLogo />
+            <AnimatedHeader speed={0.05}>
+              La confiance de <span className="color-orange">nos clients</span>{" "}
+              envers <MiniLogo />
+            </AnimatedHeader>
           </h1>
           <p>
             La satisfaction de nos clients est notre priorité. Avec{" "}
@@ -67,15 +73,18 @@ export default function ReviewsSection() {
 
         <div className="review-cards-container">
           {reviews.map((r, index) => (
-            <ReviewCard key={index} {...r} />
+            <ImageReveal key={index}>
+              <ReviewCard {...r} />
+            </ImageReveal>
           ))}
         </div>
-        <Button
-          icon={<MdAddReaction />}
-          className={"review-btn"}
-          text={"ajouter un avis"}
-          onClick={() => window.open(reviewLink, "_blank")}
-        />
+        <Link href={SOCIAL_LINKS.GOOGLE_MAPS} target="_blank">
+          <Button
+            icon={<MdAddReaction />}
+            className={"review-btn"}
+            text={"ajouter un avis"}
+          />
+        </Link>
       </div>
     </section>
   );

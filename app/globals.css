@@ -162,6 +162,22 @@ section {
   user-select: none;
 }
 
+.color-orange {
+  color: var(--main-color);
+}
+
+.legal-page {
+  padding: 8rem 2rem;
+  min-height: 50vh;
+  max-width: 80rem;
+}
+.legal-page h1 {
+  font-size: var(--fs-h1);
+  text-align: center;
+}
+.legal-page p {
+}
+
 @media (max-width: 600px) {
   .container {
     padding-inline: 1rem;

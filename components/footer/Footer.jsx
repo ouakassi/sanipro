@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa6";
 import { CONTACT_INFO, PAGE_LINKS } from "@/data/data";
 import socialData from "@/data/socialData";
+import { HiMiniCodeBracketSquare } from "react-icons/hi2";
 
 const contactInfo = [
   {
@@ -30,19 +31,19 @@ const contactInfo = [
   },
 ];
 
-export const servicesLinks = [
-  { label: "Plomberie", href: "#services" },
-  { label: "Rénovation", href: "#services" },
-  { label: "Carrelage", href: "#services" },
-  { label: "Peinture", href: "#services" },
-  { label: "Parquet", href: "#services" },
-  { label: "Dépannage", href: "#services" },
-];
-
-export const legalLinks = [
-  { label: "Mentions Légales", href: "#mentions-legales" },
-  { label: "Politique de Confidentialité", href: "#politique-confidentialite" },
-  { label: "Conditions Générales d’Utilisation", href: "#cgu" },
+const legalLinks = [
+  {
+    label: "Mentions Légales",
+    href: "/mentions-legales",
+  },
+  {
+    label: "Politique de Confidentialité",
+    href: "/politique-de-confidentialite",
+  },
+  {
+    label: "Conditions Générales d’Utilisation",
+    href: "/conditions-generales-dutilisation",
+  },
 ];
 
 export default function Footer() {
@@ -97,7 +98,15 @@ export default function Footer() {
           </div>
         </div>
         <div className="bottom-footer">
-          <p>© {year} SANIPRO. All rights reserved.</p>
+          {/* <p>© {year} SANIPRO. All rights reserved.</p> */}
+          <p className="dev">
+            <HiMiniCodeBracketSquare />
+            Developped by{" "}
+            <Link target="_blank" href="https://ouakassi.site/">
+              OUAKASSI
+            </Link>
+          </p>
+
           <ul>
             {legalLinks.map((link, i) => (
               <li key={i}>

@@ -8,6 +8,8 @@ import { useEffect, useRef } from "react";
 import { HiMiniDocumentCurrencyEuro } from "react-icons/hi2";
 import Link from "next/link";
 import { SOCIAL_LINKS } from "@/data/data";
+import AnimatedHeader from "../animations/AnimatedHeader";
+import MiniLogo from "../logo/MiniLogo";
 
 const images = [
   {
@@ -53,7 +55,13 @@ export default function CallUsSection() {
           ))}
         </div>
         <div className="content">
-          <h1>Nous Répondons Rapidement à Votre Appel</h1>
+          {/* <h1>Nous Répondons Rapidement à Votre Appel</h1> */}
+          <h1>
+            <AnimatedHeader speed={0.05}>
+              <MiniLogo /> Répond Rapidement À Chacun de
+              <span className="color-orange">Vos Appels</span>
+            </AnimatedHeader>
+          </h1>
           <p>
             Faites confiance à nos plombiers qualifiés et à la qualité
             professionnelle de notre travail. Chaque technicien Sanipro,

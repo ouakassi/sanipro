@@ -130,6 +130,19 @@ footer {
   text-decoration: underline;
 }
 
+.bottom-footer .dev {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.bottom-footer .dev svg {
+  color: white;
+  font-size: 2rem;
+}
+
+.bottom-footer .dev a {
+  color: var(--main-color);
+}
 .bottom-footer ul {
   list-style: none;
   display: flex;

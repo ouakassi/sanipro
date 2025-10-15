@@ -11,20 +11,23 @@ import CallUsSection from "@/components/sections/CallUsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSction from "@/components/sections/ContactSction";
 import Reviews from "@/components/sections/ReviewsSection";
+import Preloader from "@/components/animations/PreLoader";
 
 export default function Home() {
   return (
     <main className="main">
-      <HeroSection />
-      <TimelineSection />
-      <About />
-      <ServicesSection />
-      <Steps />
-      <ProjectsSection />
-      <Reviews />
-      <CallUsSection />
-      <ContactSction />
-      <Banner />
+      <Preloader>
+        <HeroSection />
+        <TimelineSection />
+        <About />
+        <ServicesSection />
+        <Steps />
+        <ProjectsSection />
+        <Reviews />
+        <CallUsSection />
+        <ContactSction />
+        <Banner />
+      </Preloader>
     </main>
   );
 }

@@ -31,7 +31,8 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
-import { CONTACT_INFO } from "@/data/data";
+import { CONTACT_INFO, SOCIAL_LINKS } from "@/data/data";
+import Link from "next/link";
 
 const services = [
   {
@@ -90,12 +91,20 @@ const services = [
     image: "/services/renovation.jpg",
     icon: "/services/renovation-icon.png",
   },
-  // {
-  //   title: "contactez-nous",
-  //   paragraph: <Button text="0611423116" />,
-  //   image: "/services/renovation.png",
-  //   icon: "/services/contact.png",
-  // },
+  {
+    title: "contactez-nous",
+    paragraph: (
+      <span className="call-us-slide">
+        À Chaque Appel, Nous Réagissons Sans Délai, Pour Vous Offrir Une
+        Assistance Rapide et Fiable
+        <Link target="_blank" href={SOCIAL_LINKS.WHATSAPP}>
+          <Button icon={<IoCall />} text="0611423116" className="call-btn" />
+        </Link>
+      </span>
+    ),
+    image: "/services/call-us.jpg",
+    icon: "/services/contact.png",
+  },
 ];
 
 const miniservices = [
@@ -103,7 +112,7 @@ const miniservices = [
     title: "Plomberie",
     paragraph:
       "Intervention rapide pour robinetterie, canalisations bouchées et installations sanitaires. Service d'urgence 7j/7.",
-    icon: "/services/plomberie-icon.jpg",
+    icon: "/services/plomberie-icon.png",
   },
   {
     title: "Fuites",
@@ -163,13 +172,13 @@ export default function ServicesSection() {
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     // container: headerRef,
-    offset: ["start end", "start center"],
+    offset: ["start end", "center center"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const borderRadius = useTransform(scrollYProgress, [0, 1], ["400px", "0px"]);
-  const y = useTransform(scrollYProgress, [0, 1], [50, 0]);
+  // const y = useTransform(scrollYProgress, [0, 1], [50, 0]);
 
   const isSectionInView = useInView(sectionRef, {
     amount: 0.1,
@@ -179,11 +188,9 @@ export default function ServicesSection() {
   return (
     <motion.section
       style={{
-        // scale,
-        // opacity,
-
+        scale,
         borderRadius,
-        y,
+        // y,
       }}
       ref={sectionRef}
       id="services"
@@ -229,33 +236,7 @@ export default function ServicesSection() {
       </div>
       <motion.div className="mini-services-container">
         {miniservices.map(({ icon, title, paragraph }, i) => (
-          <motion.div
-            key={title}
-            className="service"
-            initial={{ opacity: 0, y: 40, scale: 0.9 }}
-            animate={
-              isSectionInView
-                ? {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    transition: {
-                      duration: 0.5,
-                      delay: i * 0.1,
-                      ease: [0.25, 0.46, 0.45, 0.94],
-                    },
-                  }
-                : {
-                    opacity: 0,
-                    y: 40,
-                    scale: 0.9,
-                    transition: {
-                      duration: 0.3,
-                      delay: (miniservices.length - i) * 0.1,
-                    },
-                  }
-            }
-          >
+          <motion.div key={title} className="service">
             <motion.span
               className="icon-container"
               initial={{
@@ -380,8 +361,7 @@ function CardsSlider({ items }) {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2000,
-          delay: 20000000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         // pagination={{
@@ -445,7 +425,7 @@ function CardsSlider({ items }) {
 
 const ServiceCard = ({ title, paragraph, image }) => {
   const cardRef = useRef();
-  const isCardInView = useInView(cardRef, { amount: 0.2 });
+  const isCardInView = useInView(cardRef, { amount: 0.9 });
   return (
     <motion.article
       ref={cardRef}

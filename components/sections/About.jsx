@@ -6,6 +6,9 @@ import "./About.css";
 import { motion } from "motion/react";
 import Image from "next/image";
 import MiniLogo from "../logo/MiniLogo";
+import BlurText from "../animations/BlurText";
+import ImageReveal from "../animations/ImageReveal";
+import AnimatedHeader from "../animations/AnimatedHeader";
 
 const stats = [
   {
@@ -79,20 +82,27 @@ export default function About() {
       <div className="container about-container">
         <header>
           <h1>
-            <MiniLogo />
-            votre partenaire de confiance en plomberie
+            <AnimatedHeader speed={0.05}>
+              <MiniLogo />
+              votre
+              <span className="color-orange">partenaire </span> de confiance en
+              plomberie
+            </AnimatedHeader>
           </h1>
         </header>
 
         <main>
           <div className="images">
             {images.map((src, index) => (
-              <img key={src} src={src} alt={"image" + "1"} />
+              <ImageReveal key={src}>
+                <img src={src} alt={"image" + "1"} />
+              </ImageReveal>
             ))}
           </div>
           <div className="features">
-            {features.map(({ title, description, icon }) => (
+            {features.map(({ title, description, icon }, index) => (
               <Feature
+                index={index}
                 key={title}
                 icon={icon}
                 title={title}
@@ -102,45 +112,12 @@ export default function About() {
           </div>
         </main>
         <div className="counts-table">
-          {/* <h2>
-            Les chiffres parlent d’eux-mêmes pour montrer tout le travail
-            acharné.
-          </h2> */}
           <CountData />
         </div>
       </div>
     </section>
   );
 }
-
-<div>
-  <div>
-    <span>icon</span>
-    <h2>Équipe hautement qualifiée</h2>
-    <p>
-      Des plombiers certifiés, expérimentés et en formation continue pour
-      garantir un service irréprochable.
-    </p>
-  </div>
-  <div>
-    <span>icon</span>
-    <h2>Rapide et fiable</h2>
-    <p>
-      Intervention efficace et soignée, 24h/24 et 7j/7, avec des délais
-      respectés.
-    </p>
-  </div>
-  <div>
-    <span>icon</span>
-    <h2>Travail de qualité</h2>
-    <p>
-      Des prestations solides et durables pour vos réparations comme pour vos
-      rénovations complètes.
-    </p>
-  </div>
-</div>;
-
-<h1>Des experts depuis 2001 || Building our reputation since 2001.</h1>;
 
 const CountData = () => (
   <div className="container card-background">
@@ -209,32 +186,24 @@ const CountData = () => (
   </div>
 );
 
-const Feature = ({ icon, title, description }) => (
-  <div className="feature">
-    <span className="icon-container">{icon}</span>
+const Feature = ({ icon, title, description, index }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.6, delay: 0.2 }}
+    className="feature"
+  >
+    <motion.span
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+      className="icon-container"
+    >
+      {icon}
+    </motion.span>
     <div>
       <h1>{title}</h1>
       <p>{description}</p>
     </div>
-  </div>
-);
-
-{
-  /* <ScrewSvg />; */
-}
-
-const ScrewSvg = ({ className }) => (
-  <svg
-    className={className}
-    width="14"
-    height="14"
-    viewBox="0 0 14 14"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M7 0C3.136 0 0 3.136 0 7C0 10.864 3.136 14 7 14C10.864 14 14 10.864 14 7C14 3.136 10.864 0 7 0ZM11.9 8.12H9.38L8.12 9.38V11.9H5.88V9.38L4.62 8.12H2.1V5.88H4.62L5.88 4.62V2.1H8.12V4.62L9.38 5.88H11.9V8.12Z"
-      fill="white"
-    />
-  </svg>
+  </motion.div>
 );

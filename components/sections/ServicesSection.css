@@ -357,6 +357,26 @@
   filter: drop-shadow(0px 0px 4px white);
 }
 
+.swiper-container .call-us-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.swiper-container .call-btn {
+  background: #ffb187;
+  background: linear-gradient(0deg, yellow 0%, #e9ff87 100%);
+  border: none;
+  color: black;
+  box-shadow: 0 0.7em 1.5em -0.5em #e9ff87;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border-radius: 10px;
+}
+
 @media (max-width: 1024px) {
   .services-wave {
     bottom: calc(-1px + 0%);

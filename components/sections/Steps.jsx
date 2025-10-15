@@ -174,8 +174,13 @@ export default function Steps() {
     >
       <div className="container steps">
         <header>
-          <p>PROCESSUS D'INTERVENTION</p>
-          <h1>Notre Intervention en 4 étapes</h1>
+          {/* <p>PROCESSUS D'INTERVENTION</p> */}
+          <h1>
+            <AnimatedText
+              text={"Notre Intervention en 4 étapes"}
+              speed={0.04}
+            />
+          </h1>
         </header>
 
         <main className="steps-main">
@@ -220,34 +225,8 @@ export default function Steps() {
 }
 
 const Card = ({ data, index, cardId, setActiveCardId, background }) => {
-  // const controls = useAnimation();
-  // useEffect(() => {
-  //   const sequence = async () => {
-  //     await controls.start({ x: 100, opacity: 0 });
-  //     await controls.start({ x: 0, opacity: 1 });
-
-  //     // await controls.start({ rotate: 180 });
-  //     await controls.start({ scale: 1.1 });
-  //     await controls.start({ scale: 1 });
-
-  //     // Loop or repeat as needed
-  //     // controls.start({
-  //     //   x: 0,
-  //     //   transition: { repeat: Infinity, repeatType: "reverse", duration: 1 },
-  //     // });
-  //   };
-  //   sequence();
-  // }, []);
-
   const cardRef = useRef(null);
-  const isCardInView = useInView(cardRef, { amount: 0.8 });
   const cardDelay = 0.2;
-
-  useEffect(() => {
-    if (isCardInView) {
-      setActiveCardId(cardId);
-    }
-  }, [isCardInView, cardId, setActiveCardId]);
 
   return (
     <motion.div className="card-backgroundd">
@@ -268,24 +247,31 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
             0{index + 1}
           </motion.span>
 
-          <h2>{data.title}</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              duration: 0.6,
+              delay: cardDelay,
+            }}
+          >
+            {data.title}
+          </motion.h2>
           {/* <AnimatedText text={data.short} className="short" /> */}
           <p>
             <AnimatedText text={data.description} speed={0.01} blur={false} />
           </p>
           <motion.ul
             initial={{ opacity: 0, y: 20 }}
-            animate={
-              isCardInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             {data.details.map((item, idx) => (
               <motion.li
                 initial={{ opacity: 0, x: -10 }}
-                animate={
-                  isCardInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }
-                }
+                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.4 }}
                 key={idx}
               >
@@ -296,23 +282,20 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
         </div>
 
         <motion.div
-          initial={false}
-          animate={
-            isCardInView
-              ? {
-                  scale: 1,
-                  opacity: 1,
-                  clipPath: "circle(100% at 50% 50%)",
-                  x: "45%",
-                }
-              : {
-                  scale: 1.1,
-                  opacity: 0.8,
-                  clipPath: "circle(0% at 50% 50%)",
-                  x: "30%",
-                }
-          }
+          initial={{
+            scale: 1.1,
+            opacity: 0.8,
+            clipPath: "circle(0% at 50% 50%)",
+            x: "30%",
+          }}
+          whileInView={{
+            scale: 1,
+            opacity: 1,
+            clipPath: "circle(100% at 50% 50%)",
+            x: "45%",
+          }}
           transition={{ duration: 0.6, delay: cardDelay }}
+          viewport={{ amount: 1 }}
           className="img-container"
           // style={{ borderColor: background }}
         >
