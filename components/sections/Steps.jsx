@@ -295,7 +295,7 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
             x: "45%",
           }}
           transition={{ duration: 0.6, delay: cardDelay }}
-          viewport={{ amount: 1 }}
+          viewport={{ amount: 0.8 }}
           className="img-container"
           // style={{ borderColor: background }}
         >

@@ -110,7 +110,6 @@
 }
 
 .card-backgroundd {
-  background: url("/steps/background.png");
   background: url("/steps/background.jpg");
   width: 100%;
   display: flex;
@@ -124,20 +123,14 @@
 
 .steps .card {
   width: 100%;
-  /* background: rgb(197, 197, 197); */
   padding: 6rem 4rem;
   border-radius: inherit;
-  /* gap: 1rem; */
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /* max-width: 100rem; */
-
   background: linear-gradient(271deg, #042443 0%, #165da0de 200%);
-  /* background: linear-gradient(96deg, #361403 0%, #953a09d9 200%); */
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  /* background: linear-gradient(11deg, #120075, #6ab5ff); */
   position: relative;
 }
 
@@ -145,7 +138,6 @@
   font-size: 6rem;
   font-family: "Bricolage Grotesque";
   font-weight: 900;
-  color: #c9190a;
   background: linear-gradient(322deg, #a7a7a7, #f4f4f4);
   text-shadow: -1px -1px 2px #000000;
   color: #e2763d;
@@ -254,7 +246,6 @@
     display: flex;
     flex-direction: column-reverse;
     gap: 2rem;
-    background: linear-gradient(to top, #361403 0%, #953a09d9 200%);
   }
 
   .steps .card .img-container {

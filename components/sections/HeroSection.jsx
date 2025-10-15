@@ -118,8 +118,8 @@ export default function HeroSection() {
         <motion.div className="hero-image-container">
           <motion.div
             initial={{ clipPath: "circle(0% at 50% 0%)" }}
-            animate={{ clipPath: "circle(100% at 50% 50%)" }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            whileInView={{ clipPath: "circle(100% at 50% 50%)" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
             // variants={itemVariants}
           >
             <span></span>
