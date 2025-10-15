@@ -150,21 +150,23 @@
 }
 .slider-section .swiper-container {
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: grab;
 }
 .slider-section .swiper-slide {
   text-align: center;
   font-size: 2rem;
-  background: radial-gradient(50% 50% at 50% 50%, #093b81 0%, #03204a 100%);
+  background: transparent;
 }
 
 .slider-section article {
   height: -moz-fit-content;
-  padding: 0.5rem;
-  background: url("/steps/background.png"),
+  padding: 0.1rem;
+  background: url("/services/background.png"),
     radial-gradient(83rem, var(--second-color), #ffffff);
-  background-position-y: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .slider-section .service {
   display: flex;
@@ -381,6 +383,13 @@
   .services-wave {
     bottom: calc(-1px + 0%);
   }
+
+  .slider-section .service {
+    padding: 2rem 1rem;
+  }
+  .slider-section .service .content p {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -403,10 +412,6 @@
     margin-top: 2rem;
   }
 
-  .slider-section .service .content p {
-    font-size: 1.6rem;
-  }
-
   .services-wave {
     display: none;
   }
@@ -422,12 +427,16 @@
     margin-top: 2rem;
   }
   .slider-section .service .content p {
-    font-size: 1.4rem;
+    display: none;
   }
 
   .mini-services-container .service {
     max-width: 95vw;
     padding: 3rem 1rem;
+  }
+
+  .slider-section .service .content {
+    flex: unset;
   }
 }
 

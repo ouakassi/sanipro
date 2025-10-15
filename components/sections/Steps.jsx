@@ -30,7 +30,6 @@ export const processSteps = [
     id: 1,
     slug: "appel-immediat",
     title: "Appel immédiat",
-    short: "On vous répond et on vous guide.",
     description:
       "Expliquez le problème, envoyez une photo si possible. Un technicien qualifié vous répond et vous donne les bons gestes pour limiter les dégâts.",
     details: [
@@ -38,15 +37,13 @@ export const processSteps = [
       "Devis indicatif et délai d’arrivée estimé",
       "Conseils d’urgence (couper l’eau, sécuriser la zone)",
     ],
-    icon: "/steps/call.png",
-    image: "/steps/steps-1.png",
-    cta: { label: "Appeler maintenant", href: "tel:+33611423116" },
+
+    image: "/steps/steps-1.jpg",
   },
   {
     id: 2,
     slug: "diagnostic-sur-place",
     title: "Diagnostic sur place",
-    short: "On identifie l’origine de la panne.",
     description:
       "Arrivée rapide avec l’outillage adapté. Contrôle visuel et tests (fuite, pression, évacuation) pour localiser précisément le problème.",
     details: [
@@ -54,15 +51,12 @@ export const processSteps = [
       "Devis clair et validé avant travaux",
       "Option de réparation immédiate",
     ],
-    icon: "/steps/plumber-coming.png",
     image: "/steps/steps-2.jpg",
-    cta: { label: "Valider le diagnostic", href: "#devis" },
   },
   {
     id: 3,
     slug: "intervention-reparation",
     title: "Intervention & réparation",
-    short: "On répare durablement.",
     description:
       "Réparation aux normes avec pièces de qualité. Remplacement des éléments défectueux et tests de fonctionnement.",
     details: [
@@ -70,15 +64,13 @@ export const processSteps = [
       "Protection et propreté du chantier",
       "Solutions durables et garanties",
     ],
-    icon: "/steps/fixing.png",
+
     image: "/steps/steps-3.jpg",
-    cta: { label: "Lancer l’intervention", href: "#contact" },
   },
   {
     id: 4,
     slug: "controle-garantie",
     title: "Contrôle final & garantie",
-    short: "On teste, on conseille, on garantit.",
     description:
       "Vérifications d’étanchéité et de pression. Conseils d’entretien personnalisés et remise d’une facture détaillée avec garantie.",
     details: [
@@ -86,17 +78,8 @@ export const processSteps = [
       "Conseils prévention (détartrage, entretien annuel)",
       "Suivi client et disponibilité après intervention",
     ],
-    icon: "/steps/satisfied.png",
     image: "/steps/steps-4.jpg",
-    cta: { label: "Demander la facture", href: "#facture" },
   },
-];
-
-const images = [
-  "/steps/steps-1.png",
-  "/steps/steps-2.png",
-  "/steps/steps-3.png",
-  "/steps/steps-4.png",
 ];
 
 export const reassuranceBlocks = [
@@ -132,46 +115,20 @@ export const reassuranceBlocks = [
   },
 ];
 
-const backgrounds = {
-  1: "gray",
-  2: "bleu",
-  3: "purple",
-  4: "black",
-};
-
 export default function Steps() {
-  const [activeCardId, setActiveCardId] = useState(1);
-  const ref = useRef(null);
-
-  console.log(activeCardId);
-
-  // scroll progress for the line
+  const ref = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
 
-  const background = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.6, 0.9],
-    ["rgb(255 3 3)", "rgb(255 187 3)", "rgb(3 172 255)", "rgb(3 255 116)"]
-  );
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
   });
 
-  useLayoutEffect(() => {
-    document.body.style.background = background;
-  }, [activeCardId]);
-
   return (
-    <motion.section
-      // style={{ background: background }}
-      className="steps-section"
-      id="steps"
-      ref={ref}
-    >
+    <motion.section className="steps-section" id="steps" ref={ref}>
       <div className="container steps">
         <header>
           {/* <p>PROCESSUS D'INTERVENTION</p> */}
@@ -189,8 +146,6 @@ export default function Steps() {
             <motion.div
               className="line-progress"
               style={{
-                // background,
-
                 scaleY,
                 transformOrigin: "top center",
               }}
@@ -201,13 +156,7 @@ export default function Steps() {
           <div className="cards">
             {processSteps.map((data, index) => (
               <Fragment key={data.id}>
-                <Card
-                  background={background}
-                  data={data}
-                  index={index}
-                  cardId={data.id}
-                  setActiveCardId={setActiveCardId}
-                />
+                <Card data={data} index={index} cardId={data.id} />
               </Fragment>
             ))}
           </div>
@@ -224,17 +173,19 @@ export default function Steps() {
   );
 }
 
-const Card = ({ data, index, cardId, setActiveCardId, background }) => {
-  const cardRef = useRef(null);
+const Card = ({ data, index }) => {
+  const numberRef = useRef(null);
   const cardDelay = 0.2;
+
+  const isNumberInView = useInView(numberRef);
 
   return (
     <motion.div className="card-backgroundd">
-      <div ref={cardRef} className="card">
+      <div className="card">
         <div className="content">
           <motion.span
+            ref={numberRef}
             className="number"
-            // style={{ color: background }}
             initial={{ sclae: 0, y: -50, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
             transition={{
@@ -282,86 +233,28 @@ const Card = ({ data, index, cardId, setActiveCardId, background }) => {
         </div>
 
         <motion.div
-          initial={{
-            scale: 1.1,
-            opacity: 0.8,
-            clipPath: "circle(0% at 50% 50%)",
-            x: "30%",
-          }}
-          whileInView={{
-            scale: 1,
-            opacity: 1,
-            clipPath: "circle(100% at 50% 50%)",
-            x: "45%",
-          }}
-          transition={{ duration: 0.6, delay: cardDelay }}
-          viewport={{ amount: 0.8 }}
+          animate={
+            isNumberInView
+              ? {
+                  scale: 1,
+                  opacity: 1,
+                  clipPath: "circle(100% at 50% 50%)",
+                  x: "45%",
+                }
+              : {
+                  scale: 0.7,
+                  opacity: 0,
+                  clipPath: "circle(0% at 50% 50%)",
+                  x: "30%",
+                }
+          }
+          transition={{ duration: 0.4, delay: cardDelay + 0.2 }}
           className="img-container"
-          // style={{ borderColor: background }}
         >
           <motion.img src={data.image} alt={data.title} />
           <span className="mask"></span>
         </motion.div>
       </div>
-    </motion.div>
-  );
-};
-const scrollData = [
-  {
-    id: 1,
-    image: "/steps/steps-1.png",
-    title: "Appel immédiat",
-    description:
-      "Expliquez le problème, envoyez une photo si possible. Un technicien qualifié vous répond et vous donne les bons gestes pour limiter les dégâts.",
-  },
-  {
-    id: 2,
-    image: "/steps/steps-2.png",
-    title: "Diagnostic sur place",
-    description:
-      "Arrivée rapide avec l'outillage adapté. Contrôle visuel et tests (fuite, pression, évacuation) pour localiser précisément le problème.",
-  },
-  {
-    id: 3,
-    image: "/steps/steps-3.png",
-    title: "Intervention & réparation",
-    description:
-      "Réparation aux normes avec pièces de qualité. Remplacement des éléments défectueux et tests de fonctionnement.",
-  },
-  {
-    id: 4,
-    image: "/steps/steps-4.png",
-    title: "Contrôle final & garantie",
-    description:
-      "Vérifications d'étanchéité et de pression. Conseils d'entretien personnalisés et remise d'une facture détaillée avec garantie.",
-  },
-];
-
-const BouncingArrow = () => {
-  return (
-    <motion.div
-      className="scroll-indicator"
-      animate={{
-        y: [0, 10, 0],
-      }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <motion.path
-          d="M7 13l3 3 7-7"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 0.5 }}
-        />
-      </svg>
     </motion.div>
   );
 };

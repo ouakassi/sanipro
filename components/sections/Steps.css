@@ -110,7 +110,7 @@
 }
 
 .card-backgroundd {
-  background: url("/steps/background.jpg");
+  /* background: url("/steps/background.jpg"); */
   width: 100%;
   display: flex;
   justify-content: center;

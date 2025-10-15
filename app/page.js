@@ -17,16 +17,16 @@ export default function Home() {
   return (
     <main className="main">
       <Preloader>
-        <HeroSection />
-        <TimelineSection />
-        <About />
+        {/* <HeroSection /> */}
+        {/* <TimelineSection /> */}
+        {/* <About /> */}
         <ServicesSection />
-        <Steps />
-        <ProjectsSection />
-        <Reviews />
-        <CallUsSection />
-        <ContactSction />
-        <Banner />
+        {/* <Steps /> */}
+        {/* <ProjectsSection /> */}
+        {/* <Reviews /> */}
+        {/* <CallUsSection /> */}
+        {/* <ContactSction /> */}
+        {/* <Banner /> */}
       </Preloader>
     </main>
   );

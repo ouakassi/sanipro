@@ -188,7 +188,7 @@ export default function ServicesSection() {
   return (
     <motion.section
       style={{
-        scale,
+        // scale,
         borderRadius,
         // y,
       }}
@@ -258,6 +258,7 @@ export default function ServicesSection() {
                 mass: 1,
                 delay: 0.2,
               }}
+              viewport={{ once: true }}
             >
               <img src={icon} alt="" />
             </motion.span>
@@ -281,6 +282,7 @@ export default function ServicesSection() {
                   ease: "easeOut",
                 },
               }}
+              viewport={{ once: true }}
             >
               <motion.h2
                 initial={{ opacity: 0, y: 10 }}
@@ -289,6 +291,7 @@ export default function ServicesSection() {
                   duration: 0.4,
                   delay: i * 0.1 + 0.2,
                 }}
+                viewport={{ once: true }}
               >
                 {title}
               </motion.h2>
@@ -300,6 +303,7 @@ export default function ServicesSection() {
                   duration: 0.4,
                   delay: i * 0.1 + 0.3,
                 }}
+                viewport={{ once: true }}
               >
                 {paragraph}
               </motion.p>
@@ -361,7 +365,7 @@ function CardsSlider({ items }) {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 3000,
+          delay: 3000000,
           disableOnInteraction: false,
         }}
         // pagination={{
