@@ -13,6 +13,7 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import WhatsappBtn from "@/components/buttons/WhatsappBtn";
 import ScrollToTop from "@/components/buttons/ScrollToTopButton";
+import LenisProvider from "@/components/animations/LenisProvider";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -127,13 +128,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${dmSans.variable} ${robotoMono.variable} ${montserrat.variable} ${plusJakarta.variable} ${bricolage.variable} ${figtree.variable}`}
       >
-        <TopHeader />
-        <Header />
-        <WhatsappBtn />
-        <ScrollToTop />
+        <LenisProvider>
+          <TopHeader />
+          <Header />
+          <WhatsappBtn />
+          <ScrollToTop />
 
-        {children}
-        <Footer />
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

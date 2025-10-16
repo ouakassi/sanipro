@@ -11,6 +11,7 @@ import { useScroll, useTransform, motion, useInView } from "motion/react";
 import AnimatedText from "../animations/AnimatedText";
 import MiniLogo from "../logo/MiniLogo";
 import ImageReveal from "../animations/ImageReveal";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const projects = [
   {
@@ -69,6 +70,7 @@ const materialItems = [
 
 export default function ProjectsSection() {
   const sectionRef = useRef(null);
+  const isMobile = useIsMobile();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -82,10 +84,17 @@ export default function ProjectsSection() {
   return (
     <motion.section
       transition={{ duration: 1 }}
-      style={{
-        scale,
-        borderRadius,
-      }}
+      style={
+        !isMobile
+          ? {
+              scale,
+              borderRadius,
+            }
+          : {
+              scale: 1,
+              borderRadius: "0px",
+            }
+      }
       className="projects-section"
       id="projects"
     >

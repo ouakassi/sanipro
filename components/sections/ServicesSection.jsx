@@ -33,6 +33,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import { CONTACT_INFO, SOCIAL_LINKS } from "@/data/data";
 import Link from "next/link";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const services = [
   {
@@ -166,38 +167,35 @@ const miniservices = [
 ];
 
 export default function ServicesSection() {
-  const headerRef = useRef();
   const sectionRef = useRef();
+  const isMobile = useIsMobile();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    // container: headerRef,
     offset: ["start end", "center center"],
   });
 
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const borderRadius = useTransform(scrollYProgress, [0, 1], ["400px", "0px"]);
-  // const y = useTransform(scrollYProgress, [0, 1], [50, 0]);
-
-  const isSectionInView = useInView(sectionRef, {
-    amount: 0.1,
-    margin: "20px",
-  });
+  const y = useTransform(scrollYProgress, [0, 1], [50, 0]);
 
   return (
     <motion.section
-      style={{
-        // scale,
-        borderRadius,
-        // y,
-      }}
       ref={sectionRef}
+      style={
+        !isMobile
+          ? {
+              scale,
+              borderRadius,
+              y,
+            }
+          : { scale: 1, borderRadius: "0px", y: 0 }
+      }
+      // ref={sectionRef}
       id="services"
       className="services-section"
     >
       <motion.header
-        ref={headerRef}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
