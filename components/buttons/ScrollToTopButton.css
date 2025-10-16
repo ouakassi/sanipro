@@ -1,0 +1,60 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 8dvh;
+  right: 2%;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
+  cursor: pointer;
+  z-index: var(--z-tooltip);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* padding: 1.5rem; */
+  --color: var(--main-color);
+}
+
+.scroll-to-top:hover {
+  /* transform: scale(1.05); */
+  /* transition: transform 0.2s ease; */
+}
+
+.progress-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.bg {
+  fill: none;
+  stroke: var(--second-color);
+  stroke: #9dcaf5;
+  stroke-width: 2;
+  border: none;
+}
+
+.progress {
+  fill: none;
+  stroke: var(--color);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.arrow svg {
+  color: var(--color);
+  font-size: 24px;
+  font-size: 2.2rem;
+}
+
+@media (width < 480px) {
+  .scroll-to-top {
+    bottom: 10%;
+  }
+}

@@ -11,6 +11,7 @@ import {
 import TopHeader from "@/components/header/TopHeader";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import WhatsappBtn from "@/components/buttons/WhatsappBtn";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -127,6 +128,7 @@ export default function RootLayout({ children }) {
       >
         <TopHeader />
         <Header />
+        <WhatsappBtn />
         {children}
         <Footer />
       </body>

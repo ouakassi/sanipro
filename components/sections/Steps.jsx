@@ -207,23 +207,31 @@ const Card = ({ data, index }) => {
               duration: 0.6,
               delay: cardDelay,
             }}
+            viewport={{ once: true }}
           >
             {data.title}
           </motion.h2>
           {/* <AnimatedText text={data.short} className="short" /> */}
           <p>
-            <AnimatedText text={data.description} speed={0.01} blur={false} />
+            <AnimatedText
+              text={data.description}
+              speed={0.01}
+              blur={false}
+              once={true}
+            />
           </p>
           <motion.ul
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
           >
             {data.details.map((item, idx) => (
               <motion.li
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.4 }}
+                viewport={{ once: true }}
                 key={idx}
               >
                 {item}

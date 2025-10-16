@@ -6,7 +6,7 @@ export default function MentionsLegales() {
         <strong>Nom de l’entreprise :</strong> Sanipro SARL
       </p>
       <p>
-        <strong>Adresse :</strong> 24 Av. de Stalingrad, 21000 Dijon, France
+        <strong>Adresse :</strong> 22 Av. de Stalingrad, 21000 Dijon, France
       </p>
       <p>
         <strong>Email :</strong> sanipro21000@gmail.com

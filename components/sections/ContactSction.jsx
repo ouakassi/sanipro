@@ -45,7 +45,7 @@ export default function ContactSction() {
           <div className="map-container">
             <iframe
               title="Sanipro Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10941.766557953796!2d5.0552165!3d47.3382395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ed62000ff13b79%3A0x50528cf023efc59f!2s24%20Av.%20de%20Stalingrad%2C%2021000%20Dijon%2C%20France!5e0!3m2!1sfr!2sfr!4v1700000000000&maptype=roadmap&style=feature:all|element:labels|visibility:off&style=feature:road|element:geometry|color:0x383838"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1517.4418336814338!2d5.055800760491652!3d47.338286202266076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ed62000c1f0f71%3A0x1a7917ee8a12ac67!2s22%20Av.%20de%20Stalingrad%2C%2021000%20Dijon%2C%20France!5e0!3m2!1sen!2sma!4v1760615882662!5m2!1sen!2sma"
               width="100%"
               height="100%"
               style={{ border: 0 }}

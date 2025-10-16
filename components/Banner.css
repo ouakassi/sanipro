@@ -17,6 +17,7 @@
   justify-content: space-between;
 
   padding: 0px;
+  max-width: 80rem;
 }
 
 .banner div {
@@ -44,11 +45,11 @@
   gap: 2rem;
   z-index: 1;
   padding: 4rem 2rem;
-  margin-left: 40%;
+  margin-left: 25%;
 }
 
 .banner .content h1 {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: normal;
   color: #ffffff;
   text-shadow: rgb(0, 0, 0) 0px 7px 1px;

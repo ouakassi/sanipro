@@ -12,21 +12,23 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSction from "@/components/sections/ContactSction";
 import Reviews from "@/components/sections/ReviewsSection";
 import Preloader from "@/components/animations/PreLoader";
+import ScrollToTop from "@/components/buttons/ScrollToTopButton";
 
 export default function Home() {
   return (
     <main className="main">
       <Preloader>
-        {/* <HeroSection /> */}
-        {/* <TimelineSection /> */}
-        {/* <About /> */}
+        <HeroSection />
+        <TimelineSection />
+        <About />
         <ServicesSection />
-        {/* <Steps /> */}
-        {/* <ProjectsSection /> */}
-        {/* <Reviews /> */}
-        {/* <CallUsSection /> */}
-        {/* <ContactSction /> */}
-        {/* <Banner /> */}
+        <Steps />
+        <ProjectsSection />
+        <Reviews />
+        <CallUsSection />
+        <ContactSction />
+        <Banner />
+        <ScrollToTop />
       </Preloader>
     </main>
   );
