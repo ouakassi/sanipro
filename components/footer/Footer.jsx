@@ -15,6 +15,7 @@ import {
 import { CONTACT_INFO, PAGE_LINKS } from "@/data/data";
 import socialData from "@/data/socialData";
 import { HiMiniCodeBracketSquare } from "react-icons/hi2";
+import { NavItem } from "../header/Header";
 
 const contactInfo = [
   {
@@ -47,7 +48,7 @@ const legalLinks = [
 ];
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  // const year = new Date().getFullYear();
   return (
     <footer>
       <div className="container footer">
@@ -78,9 +79,11 @@ export default function Footer() {
               <h4>Liens</h4>
               <ul>
                 {PAGE_LINKS.map((link, i) => (
-                  <li key={i}>
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
+                  <NavItem
+                    key={link.label}
+                    title={link.label}
+                    link={link.href}
+                  />
                 ))}
               </ul>
             </div>

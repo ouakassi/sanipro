@@ -123,7 +123,7 @@ export default function HeroSection() {
             // variants={itemVariants}
           >
             <span></span>
-            <Image
+            <img
               alt="worker"
               src={"/hero/hero.png"}
               width="1200"

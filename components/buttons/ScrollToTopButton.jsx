@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 import "./ScrollToTopButton.css";
@@ -16,7 +18,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 200);
+      setVisible(window.scrollY > 0);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

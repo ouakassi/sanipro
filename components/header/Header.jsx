@@ -11,6 +11,7 @@ import Logo from "../logo/Logo";
 import { CONTACT_INFO, PAGE_LINKS, SOCIAL_LINKS } from "@/data/data";
 import { PiListDashesBold } from "react-icons/pi";
 import { RiCloseLargeLine } from "react-icons/ri";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
@@ -95,10 +96,38 @@ export default function Header() {
 
 const NavList = ({ children }) => <ul>{children}</ul>;
 
-const NavItem = ({ title, link, onClick }) => (
-  <li>
-    <Link onClick={onClick} href={link}>
-      {title}
-    </Link>
-  </li>
-);
+export const NavItem = ({ title, link, onClick }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleClick = (e) => {
+    if (link.startsWith("#")) {
+      e.preventDefault();
+
+      if (pathname !== "/") {
+        // Navigate to home first
+        router.push("/");
+
+        // Wait a small delay, then scroll
+        setTimeout(() => {
+          const el = document.getElementById(link.substring(1));
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 200); // adjust delay if needed
+      } else {
+        // Already on home page
+        const el = document.getElementById(link.substring(1));
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    if (onClick) onClick();
+  };
+
+  return (
+    <li>
+      <a href={link} onClick={handleClick}>
+        {title}
+      </a>
+    </li>
+  );
+};
