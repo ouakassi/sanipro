@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.saniprosarl.com/sitemap.xml
+Sitemap: https://www.saniprosarl.fr/sitemap.xml
