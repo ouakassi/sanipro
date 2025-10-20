@@ -28,9 +28,7 @@ export default function CallUsSection() {
     target: imgRef,
     offset: ["start end", "start start"],
   });
-  useEffect(() => {
-    scrollYProgress.on("change", (v) => console.log("progress:", v));
-  }, [scrollYProgress]);
+
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [3, 0]);
