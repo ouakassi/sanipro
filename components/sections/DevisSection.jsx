@@ -117,7 +117,6 @@ const DevisSection = () => {
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
             }}
             transition={{ duration: 0.8 }}
-            viewport={{ amount: 0.8 }}
             className="img-container"
           >
             <img src="/contact/contact-plumber.png" alt="" />

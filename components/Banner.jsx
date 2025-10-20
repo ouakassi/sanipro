@@ -3,14 +3,17 @@ import Button from "./buttons/Button";
 import { IoCall } from "react-icons/io5";
 import { motion } from "motion/react";
 import { CONTACT_INFO } from "@/data/data";
+import useIsMobile from "@/hooks/useIsMobile";
 
 export default function Banner() {
+  const isMobile = useIsMobile(1024);
+
   return (
     <section className="banner-section">
       <div className="container banner">
         <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={isMobile ? { y: 100, opacity: 0 } : { x: 100, opacity: 0 }}
+          whileInView={isMobile ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="image-container"
         >

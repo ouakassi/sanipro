@@ -39,7 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .devis-container .img-container img {
   width: 100%;
