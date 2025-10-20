@@ -12,6 +12,7 @@ import { CONTACT_INFO, PAGE_LINKS, SOCIAL_LINKS } from "@/data/data";
 import { PiListDashesBold } from "react-icons/pi";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { usePathname, useRouter } from "next/navigation";
+import { HiMiniDocumentCurrencyEuro } from "react-icons/hi2";
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
@@ -57,22 +58,29 @@ export default function Header() {
         </Link>
 
         <NavList>
-          {PAGE_LINKS.map(({ label, href }) => (
+          {PAGE_LINKS.map(({ label, href, icon }) => (
             <NavItem
               key={label}
               title={label}
+              icon={icon}
               link={href}
               onClick={handleToggleSidebar}
             />
           ))}
         </NavList>
-        <Link target="_blank" href={SOCIAL_LINKS.WHATSAPP}>
-          <Button
-            icon={<FaPhoneAlt />}
-            // text={"appelez-nous " + CONTACT_INFO.TELE}
-            text={CONTACT_INFO.TELE}
-          />
-        </Link>
+        <div className="action-btns">
+          {/* <Link href={"#devis"}>
+            <Button icon={<HiMiniDocumentCurrencyEuro />} text={"Devis ?"} />
+          </Link> */}
+          <Link target="_blank" href={SOCIAL_LINKS.WHATSAPP}>
+            <Button
+              icon={<FaPhoneAlt />}
+              className="call-btn"
+              // text={"appelez-nous " + CONTACT_INFO.TELE}
+              text={CONTACT_INFO.TELE}
+            />
+          </Link>
+        </div>
       </motion.nav>
       <motion.button
         initial={{ opacity: 0, y: -30 }}
@@ -96,7 +104,7 @@ export default function Header() {
 
 const NavList = ({ children }) => <ul>{children}</ul>;
 
-export const NavItem = ({ title, link, onClick }) => {
+export const NavItem = ({ title, link, icon, onClick }) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -126,6 +134,7 @@ export const NavItem = ({ title, link, onClick }) => {
   return (
     <li>
       <a href={link} onClick={handleClick}>
+        {icon}
         {title}
       </a>
     </li>

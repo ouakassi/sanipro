@@ -98,10 +98,9 @@
   color: var(--main-color);
 }
 
-.row {
+.projects-container .row {
   width: 100%;
   display: flex;
-  /* flex-wrap: wrap; */
   gap: 2rem;
   justify-content: center;
   margin-top: 4rem;
@@ -213,7 +212,7 @@
 }
 
 @media (max-width: 768px) {
-  .row {
+  .projects-container .row {
     margin-top: 8rem;
     flex-direction: column;
     gap: 8rem;

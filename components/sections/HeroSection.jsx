@@ -104,7 +104,7 @@ export default function HeroSection() {
             ))}
           </motion.ul>
           <motion.div className="call-to-action-btns">
-            <Link href="#contact">
+            <Link href="#devis">
               <Button
                 icon={<HiMiniDocumentCurrencyEuro />}
                 text="devis gratuit"

@@ -9,8 +9,9 @@ export default function Banner() {
     <section className="banner-section">
       <div className="container banner">
         <motion.div
-          initial={{ x: -100 }}
-          whileInView={{ x: 0 }}
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="image-container"
         >
           <img src="/banner/sanipro-car.png" alt="sanipro car" />

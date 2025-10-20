@@ -142,7 +142,7 @@ const CountData = () => (
                       to={stat.value}
                       delay={0.2}
                       separator=","
-                      duration={0.6}
+                      duration={0.2}
                       className="count-up-text"
                     />
                   </span>

@@ -25,21 +25,41 @@ nav ul {
   align-self: center;
   gap: 2rem;
 }
-
-nav a {
+nav ul li a {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   text-transform: capitalize;
   transition: 0.2s all;
+  padding: 0.4rem;
 }
+
+nav ul li a svg {
+  font-size: 1.8rem;
+  align-self: center;
+}
+
 nav a:hover,
 nav a:focus {
   color: var(--main-color);
+}
+.call-btn {
+  padding: 0.5rem 1rem;
+}
+.action-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .toggle-btn {
   display: none;
 }
 
-@media (width < 900px) {
+@media (width < 1000px) {
   .header nav {
     flex-direction: column;
     gap: 2rem;

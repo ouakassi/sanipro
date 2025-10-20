@@ -166,7 +166,7 @@ export default function Steps() {
             N’attendez plus, contactez <MiniLogo />
             dès aujourd’hui !
           </h1>
-          <Button text="+33 611 231 314" icon={<FaPhoneAlt />} />
+          <Button text={CONTACT_INFO.TELE} icon={<FaPhoneAlt />} />
         </div>
       </div>
     </motion.section>

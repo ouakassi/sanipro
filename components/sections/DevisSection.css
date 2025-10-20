@@ -1,0 +1,270 @@
+.devis-section {
+  padding: 6rem 1rem;
+}
+
+.devis-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 6rem 2rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.devis-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* padding: 6rem 2rem; */
+  gap: 1rem;
+  /* background-color: #f9f9f9; */
+  flex-wrap: wrap;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+}
+
+.devis-section h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-h1);
+  text-align: center;
+  max-width: 60rem;
+  /* text-align: center; */
+}
+
+.devis-container .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.devis-container .img-container img {
+  width: 100%;
+  min-height: 100%;
+  /* max-width: 35rem; */
+  border-radius: 0 20px 20px 0;
+}
+.devis-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 2rem;
+  border-radius: 20px 0 0 20px;
+  position: relative;
+  min-width: 40rem;
+  gap: 2rem;
+}
+.devis-form,
+.devis-container .img-container {
+  flex: 1;
+  min-width: 30rem;
+}
+
+.devis-form header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.devis-form h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.devis-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.devis-form::before,
+.devis-form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffb187, transparent);
+  border-radius: 50%;
+}
+
+.devis-form::after {
+  bottom: 0;
+  top: unset;
+}
+
+.devis-form label {
+  font-size: 1.6rem;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.devis-form label span {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.devis-form label span svg {
+  font-size: 2rem;
+  color: #ff8645;
+}
+.devis-form input,
+.devis-form textarea {
+  width: calc(20rem, 40rem, 100%);
+  padding: 0.75rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  /* background-color: #f3f3f34f; */
+}
+.devis-form textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.devis-form input:focus,
+.devis-form textarea:focus {
+  /* outline: none; */
+  border-color: var(--main-color);
+  box-shadow: 0 0 1px var(--main-color);
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.devis-form .submit-button {
+  width: 100%;
+  /* min-width: 26rem; */
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.2rem;
+  text-transform: capitalize;
+  flex: 1;
+}
+
+.btn-wtsp {
+  background: #25d366;
+  background: linear-gradient(0deg, #25d366 0%, #66fc9d 100%);
+  box-shadow: 0 0.7em 1.5em -0.5em #0ba845;
+  border-radius: 25px;
+  transition: 0.2s all;
+}
+/* .devis-form .submit-button:hover {
+  background: var(--second-color);
+} */
+.devis-form .submit-button svg {
+  font-size: 2.2rem;
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper select {
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  appearance: none;
+  /* font-size: 0.95rem; */
+  color: #333;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.select-wrapper select:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 1px var(--main-color);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.8rem;
+  color: #555;
+  transition: transform 0.2s ease;
+}
+
+.select-wrapper select:focus + .select-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+@media (max-width: 1100px) {
+  .devis-container .img-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .devis-container {
+    padding: 0rem;
+  }
+  .devis-form,
+  .devis-container .img-container {
+    min-width: 100%;
+  }
+  .devis-form {
+    border-radius: 20px;
+  }
+  .devis-container .img-container img {
+    border-radius: 0 0 20px 20px;
+  }
+  .row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .devis-container-wrapper {
+    padding: 6rem 1rem;
+    gap: 4rem;
+  }
+  .devis-form {
+    padding: 4rem 1rem;
+  }
+
+  .devis-form label {
+    margin-bottom: 1rem;
+  }
+
+  .btns-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 360px) {
+}

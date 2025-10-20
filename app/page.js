@@ -12,6 +12,7 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSction from "@/components/sections/ContactSction";
 import Reviews from "@/components/sections/ReviewsSection";
 import Preloader from "@/components/animations/PreLoader";
+import DevisSection from "@/components/sections/DevisSection";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <ProjectsSection />
         <Reviews />
         <CallUsSection />
+        <DevisSection />
         <ContactSction />
         <Banner />
       </Preloader>
