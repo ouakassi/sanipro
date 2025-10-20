@@ -14,6 +14,7 @@ import Footer from "@/components/footer/Footer";
 import WhatsappBtn from "@/components/buttons/WhatsappBtn";
 import ScrollToTop from "@/components/buttons/ScrollToTopButton";
 import LenisProvider from "@/components/animations/LenisProvider";
+import HomeSideBtns from "@/components/HomeSideBtns";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -199,9 +200,7 @@ export default function RootLayout({ children }) {
         <LenisProvider>
           <TopHeader />
           <Header />
-          <WhatsappBtn />
-          <ScrollToTop />
-
+          <HomeSideBtns />
           {children}
           <Footer />
         </LenisProvider>

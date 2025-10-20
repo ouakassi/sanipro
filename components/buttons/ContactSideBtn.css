@@ -1,6 +1,6 @@
-.wtsp-btn {
+.contact-side-btn {
   padding: 0.5rem;
-  background-color: rgb(15, 185, 15);
+  background-color: var(--main-color);
   border-radius: 50%;
   z-index: var(--z-tooltip);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
@@ -12,11 +12,11 @@
   justify-content: center;
 }
 
-.wtsp-btn svg {
-  font-size: 2.5rem;
-  color: white;
+.contact-side-btn:hover {
+  background-color: #ff8645;
 }
 
-.wtsp-btn:hover {
-  background-color: rgb(7, 218, 7);
+.contact-side-btn svg {
+  font-size: 2.5rem;
+  color: white;
 }

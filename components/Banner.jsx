@@ -12,8 +12,12 @@ export default function Banner() {
     <section className="banner-section">
       <div className="container banner">
         <motion.div
-          initial={isMobile ? { y: 100, opacity: 0 } : { x: 100, opacity: 0 }}
-          whileInView={isMobile ? { y: 0, opacity: 1 } : { x: 0, opacity: 1 }}
+          initial={
+            isMobile
+              ? { y: 100, opacity: 0, scale: 0.5 }
+              : { x: 100, opacity: 0, scale: 0.5 }
+          }
+          whileInView={{ x: 0, y: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="image-container"
         >

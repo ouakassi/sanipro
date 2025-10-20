@@ -60,7 +60,7 @@
   width: fit-content;
   padding: 0.4rem 1rem;
   border-radius: 10px;
-  font-weight: 800;
+  font-weight: normal;
 }
 
 .hero-container .content ul {
