@@ -235,3 +235,19 @@
     bottom: 0%;
   }
 }
+
+@media (max-width: 480px) {
+  .counts-table {
+    padding: 1rem;
+  }
+
+  .about-container main {
+    padding: 5rem 0rem;
+  }
+  .container {
+    padding-inline: 1rem;
+  }
+  .about-section {
+    padding: 4rem 1rem;
+  }
+}

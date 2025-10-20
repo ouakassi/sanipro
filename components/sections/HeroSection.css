@@ -144,3 +144,9 @@
     padding: 2rem;
   }
 }
+
+@media (max-width: 410px) {
+  .hero-container h2 {
+    font-size: 1.5rem;
+  }
+}
