@@ -33,6 +33,10 @@ const DevisSection = () => {
     ? "33" + saniproNumber.slice(1)
     : saniproNumber;
 
+  const MAIL_SERVICE = "service_lk4ka1w";
+  const MAIL_TEMPLATE = "template_u2s8rug";
+  const PUBLIC_KEY = "YJXrUeHIWyOpO7hW6";
+
   const validateForm = () => {
     const name = form.current.user_name.value.trim();
     const email = form.current.user_email.value.trim();
@@ -55,8 +59,8 @@ const DevisSection = () => {
     if (!valid) return;
 
     emailjs
-      .sendForm("service_ode6sah", "template_rpzx5n5", form.current, {
-        publicKey: "FRwH8zku70NQhozM_",
+      .sendForm(MAIL_SERVICE, MAIL_TEMPLATE, form.current, {
+        publicKey: PUBLIC_KEY,
       })
       .then(
         () => {

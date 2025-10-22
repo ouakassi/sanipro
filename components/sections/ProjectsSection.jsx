@@ -43,6 +43,20 @@ const projects = [
     caption:
       "Transformation complète d’un escalier ancien en un passage moderne, sûr et élégant.",
   },
+  {
+    id: 5,
+    before: "/projects/compare-5.jpeg",
+    after: "/projects/compare-5-twin.jpeg",
+    caption:
+      "Pose de carrelage grand format sur ancien sol de mosaïque, avec système de nivellement pour obtenir des joints réguliers.",
+  },
+  {
+    id: 6,
+    before: "/projects/compare-6.jpg",
+    after: "/projects/compare-6-twin.jpg",
+    caption:
+      "Installation de traitement d’eau domestique avec dérivation et préfiltration visibles sur un mur de local technique",
+  },
 ];
 
 const materialItems = [
@@ -103,7 +117,6 @@ export default function ProjectsSection() {
           className="section-header"
           ref={sectionRef}
           initial={{ opacity: 0, y: 30 }}
-          
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.6,
