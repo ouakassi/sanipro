@@ -99,7 +99,11 @@ const services = [
         À Chaque Appel, Nous Réagissons Sans Délai, Pour Vous Offrir Une
         Assistance Rapide et Fiable
         <Link target="_blank" href={SOCIAL_LINKS.WHATSAPP}>
-          <Button icon={<IoCall />} text="0611423116" className="call-btn" />
+          <Button
+            icon={<IoCall />}
+            text={CONTACT_INFO.TELE}
+            className="call-btn"
+          />
         </Link>
       </span>
     ),
