@@ -57,6 +57,13 @@ const projects = [
     caption:
       "Installation de traitement d’eau domestique avec dérivation et préfiltration visibles sur un mur de local technique",
   },
+  {
+    id: 7,
+    before: "/projects/compare-7.jpeg",
+    after: "/projects/compare-7-twin.jpeg",
+    caption:
+      "Installation d’un WC suspendu avec coffrage affleurant et habillage céramique à motif végétal 🌿 — un design moderne et facile d’entretien.",
+  },
 ];
 
 const materialItems = [
@@ -222,7 +229,7 @@ export default function ProjectsSection() {
             </p>
           </header>
           <div className="latest-projects-container">
-            {Array.from({ length: 7 }).map((_, index) => (
+            {Array.from({ length: 9 }).map((_, index) => (
               <ImageReveal key={index} withHover={true}>
                 <img
                   src={`/projects/project-${index + 1}.jpeg`}

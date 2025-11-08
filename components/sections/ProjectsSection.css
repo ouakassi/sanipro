@@ -80,6 +80,7 @@
 .project-feature {
   width: stretch;
   position: relative;
+  max-width: 60rem;
 }
 
 .project-feature p {
